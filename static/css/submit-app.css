@@ -1,0 +1,425 @@
+#apply {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #410E6A;
+    color: white;
+    padding-bottom: 11vh;
+    padding-top: 12vh;
+}
+
+#submit-app-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    border-radius: 1.7vw;
+    background-color: #2E3038;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #FFC75C;
+    transition: background-color 0.3s ease;
+}
+
+#submit-app-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#submit-app-block h3 {
+    color: #A4FFDE;
+    font-size: 2.5vw;
+    margin-bottom: 20px;
+}
+
+#submit-app-block input,
+#course-select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    font-size: 1.2vw;
+}
+
+#course-select {
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-app-form__btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #FFC75C;
+    border: none;
+    border-radius: 5px;
+    color: #410E6A;
+    font-size: 1.2vw;
+    cursor: pointer;
+}
+
+#course-select {
+    color: rgb(37, 37, 37);
+}
+
+.submit-app-form__btn:hover {
+    background-color: #410E6A;
+    color: #FFC75C;
+}
+
+#submit-app-photo {
+    width: 40%;
+    height: 40vh;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button.submit-app-form__btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    margin-top: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.privacy-policy {
+    font-family: 'Sansita', sans-serif;
+}
+
+.privacy-policy-content {
+    display: flex;
+    align-items: center;
+}
+
+.policy-checkbox-container {
+    padding: 0 20px;
+}
+
+.policy-text-container {
+    flex: 1;
+}
+
+#privacy-policy-checkbox {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.privacy-policy a {
+    color: orange;
+}
+
+.privacy-policy p {
+    text-align: justify;
+    font-size: 0.6vw;
+    margin: 0;
+}
+
+#submit-app-modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#submit-app-modal-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: #333;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 85vh;
+    box-shadow: 0 15px 40px rgba(65, 14, 106, 0.3);
+    border: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Заголовок */
+#submit-app-modal-header {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#submit-app-modal-logo {
+    height: 35px;
+    width: auto;
+    max-width: 160px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+#submit-app-modal-title {
+    color: #410E6A;
+    font-size: 1.5rem; /* Фиксированный размер, но адаптивный через медиа-запросы */
+    font-family: 'Sansita', sans-serif;
+    margin: 0;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Тело сообщения — ГЛАВНЫЙ КОНТЕНТ */
+#submit-app-modal-body {
+    background: #e5e9ff;
+    border-radius: 10px;
+    width: 100%;
+    border-left: 3px solid #410E6A;
+    border-right: 3px solid #410E6A;
+    flex: 1; /* Занимает всё свободное пространство */
+    min-height: 120px; /* Гарантированная высота */
+    padding: 15px;
+    margin: 10px 0;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#submit-app-modal-message {
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.5;
+    color: #444;
+    margin: 0;
+    white-space: pre-line;
+    width: 100%;
+}
+
+/* Скроллбар */
+#submit-app-modal-body::-webkit-scrollbar {
+    width: 4px;
+}
+
+#submit-app-modal-body::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 2px;
+}
+
+#submit-app-modal-body::-webkit-scrollbar-thumb {
+    background: #410E6A;
+    border-radius: 2px;
+}
+
+/* Кнопка */
+#btn-close-submit-app-modal {
+    width: 100%;
+    margin: 15px 0 10px;
+    background: linear-gradient(135deg, #410E6A 0%, #5d1a94 100%);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(65, 14, 106, 0.4);
+    font-family: 'Sansita', sans-serif;
+}
+
+#btn-close-submit-app-modal:hover {
+    background: linear-gradient(135deg, #5d1a94 0%, #6a24a3 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(65, 14, 106, 0.5);
+}
+
+/* Футер */
+#submit-app-modal-footer {
+    color: #666;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin: 5px 0 0;
+    opacity: 0.8;
+}
+
+/* Анимация */
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#submit-app-modal.show #submit-app-modal-content {
+    animation: modalAppear 0.3s ease-out;
+}
+
+/* Для маленькой высоты экрана (ноутбуки) */
+@media (max-height: 700px) {
+    #submit-app-modal-content {
+        max-height: 90vh;
+    }
+
+    #submit-app-modal-body {
+        max-height: 50vh; /* Больше места для текста */
+    }
+
+    #submit-app-modal-header {
+        margin-bottom: 10px;
+    }
+
+    #submit-app-modal-footer {
+        margin-top: 3px;
+    }
+}
+
+/* Для очень маленькой высоты */
+@media (max-height: 500px) {
+    #submit-app-modal-content {
+        padding: 15px;
+        max-height: 95vh;
+    }
+
+    #submit-app-modal-body {
+        padding: 8px;
+        min-height: 60px;
+        max-height: 60vh;
+    }
+
+    #submit-app-modal-title {
+        font-size: 1.1rem;
+    }
+
+    #submit-app-modal-logo {
+        height: 20px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #apply {
+        height: auto;
+        padding: 10vh 0;
+    }
+
+    #submit-app-content {
+        flex-direction: column-reverse;
+        width: 80%;
+        padding: 20px;
+    }
+
+    #submit-app-photo {
+        width: 85%;
+        margin-bottom: 20px;
+        height: 20vh;
+    }
+
+    #submit-app-block {
+        width: 100%;
+    }
+
+    #submit-app-block h3 {
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    #submit-app-block input[type="text"],
+    #submit-app-block input[type="tel"],
+    #submit-app-block input[type="email"],
+    #submit-app-block button.submit-app-form__btn {
+        width: 100%;
+        font-size: 4vw;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    #course-select {
+        width: 100%;
+        font-size: 4vw;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    #privacy-policy-checkbox {
+        height: 15px;
+        flex: 1.5;
+    }
+
+    .privacy-policy p {
+        flex: 8.5;
+        font-size: 2vw;
+    }
+
+    #submit-app-modal-content {
+        padding: 20px;
+        max-height: 90vh;
+    }
+
+    #submit-app-modal-body {
+        padding: 12px;
+        min-height: 100px;
+    }
+
+    #submit-app-modal-title {
+        font-size: 1.3rem;
+    }
+
+    #submit-app-modal-logo {
+        height: 30px;
+        max-width: 140px;
+    }
+
+    #submit-app-modal-content {
+        padding: 15px;
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    #submit-app-modal-body {
+        padding: 10px;
+        min-height: 80px;
+        max-height: 60vh; /* На мобилках даём больше высоты для текста */
+    }
+
+    #submit-app-modal-title {
+        font-size: 1.2rem;
+    }
+
+    #submit-app-modal-message {
+        font-size: 0.95rem;
+    }
+
+    #submit-app-modal-logo {
+        height: 25px;
+        max-width: 120px;
+    }
+
+    #btn-close-submit-app-modal {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+}

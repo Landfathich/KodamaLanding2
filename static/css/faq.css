@@ -1,0 +1,212 @@
+#faq {
+    width: 100%;
+    min-height: 120vh;
+    padding-bottom: 10vh;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#top-decor-faq {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-image: url(../images/top_decor_without_bubbles.webp);
+    height: 25vh;
+    background-repeat: repeat-x;
+    background-position: top;
+    background-size: contain;
+    z-index: 0;
+}
+
+.bubble {
+    position: absolute;
+    background-image: url(../images/purple_bubble.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: float 5s linear infinite;
+    z-index: 0;
+    display: block;
+    border-radius: 100%;
+}
+
+#questions-content {
+    z-index: 1;
+    padding: 13% 5% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#questions-content h2 {
+    color: #400D69;
+    font-size: 3vw;
+    text-align: start;
+    z-index: 1;
+}
+
+#fabs {
+    width: 70%;
+    margin: 10vh auto auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    z-index: 1;
+}
+
+.faq-left {
+    margin: 2%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-right {
+    margin: 2%;
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq {
+    width: 100%;
+    padding: 10px 5%;
+    border-radius: 15px;
+    color: #410E6A;
+    font-family: sans-serif;
+    font-weight: normal;
+    z-index: 2;
+}
+
+.faq-item {
+    margin: 15px 15px 5px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #FFC75C;
+    cursor: pointer;
+}
+
+.faq-answer {
+    margin-left: 15px;
+    border: 1px solid #410E6A;
+    background-color: #f0f0f0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.faq-answer.open {
+    max-height: 1200px;
+    opacity: 1;
+}
+
+.bottom-decor-faq {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-image: url(../images/bottom_decor_faq.webp);
+    height: 15vh;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: contain;
+    z-index: 1;
+}
+
+.bottom-decor-faq-bg {
+    position: absolute;
+    bottom: -1vh;
+    width: 100%;
+    background-image: linear-gradient(#410e6a00, #410E6A);
+    height: 7vh;
+    background-color: #410E6A;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: contain;
+    z-index: 0;
+}
+
+.bottom-decor-faq-bg-transparent {
+    position: absolute;
+    bottom: -1vh;
+    width: 100%;
+    background-image: linear-gradient(#410e6a00, #410e6a83);
+    height: 20vh;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: contain;
+    z-index: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #top-decor-faq {
+        margin-top: -0.8vh;
+        z-index: 0;
+        height: 7vh;
+        background-size: cover;
+    }
+
+    #faq {
+        min-height: 80vh;
+    }
+
+    #fabs {
+        width: 80%;
+        margin-top: 2vh;
+        display: contents;
+    }
+
+    #questions-content h2 {
+        font-size: 6vw;
+        text-align: center;
+    }
+
+    .faq-left,
+    .faq-right {
+        display: contents;
+    }
+
+    #questions-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .faq {
+        width: 85%;
+        padding: 1.3vh;
+        margin: 1vh auto;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .bottom-decor-faq {
+        height: 20vh;
+    }
+
+    .bottom-decor-faq-bg {
+        height: 3vh;
+    }
+
+    .bottom-decor-faq-bg-transparent {
+        height: 10vh;
+    }
+}

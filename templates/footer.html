@@ -1,0 +1,49 @@
+<footer>
+    <div class="footer-container">
+
+        <!-- Колонка 1: Юридическая информация -->
+        <div class="footer-col">
+            <h3>Kodama</h3>
+            <div class="legal-info">
+                <p>Самозанятый Кожемякин Артур Александрович</p>
+                <p>ИНН: 614905530653</p>
+                <p>г. Мытищи</p>
+            </div>
+        </div>
+
+        <!-- Колонка 2: Документы -->
+        <div class="footer-col">
+            <h3>Документы</h3>
+            <nav class="footer-links">
+                <a href="/offer" target="_blank"><i class="fas fa-file-contract"></i> Договор-оферта</a>
+                <a href="/privacy" target="_blank"><i class="fas fa-shield-alt"></i> Политика обработки персональных
+                    данных</a>
+            </nav>
+        </div>
+
+        <!-- Колонка 3: Контакты -->
+        <div class="footer-col">
+            <h3>Свяжитесь с нами</h3>
+            <div class="contact-links">
+                <a href="tel:+79852603374" class="contact-link">
+                    <i class="fas fa-phone"></i> +7 (985) 260-33-74
+                </a>
+                <a href="mailto:kodama.edu@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i> kodama.edu@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <!-- Колонка 4: Соцсети и Мессенджеры -->
+        <div class="footer-col">
+            <h3>Мы в соцсетях</h3>
+            <div class="social-links">
+                {% include "templates/includes/social_links.html" %}
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024-<span id="current-year">2026</span> Kodama. Все права защищены.</p>
+    </div>
+</footer>

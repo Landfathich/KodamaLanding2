@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /offer
+Disallow: /privacy
+
+Sitemap: https://kodamaclass.com/sitemap.xml

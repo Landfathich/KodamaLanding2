@@ -1,0 +1,10 @@
+static/images/*.png
+static/images/*.jpg
+static/images/*.webp
+
+.venv/
+.vscode/
+*.pyc
+__pycache__/
+
+.git/

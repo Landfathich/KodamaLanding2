@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2026-02-21 12:00">
+    <shop>
+        <name>Kodama</name>
+        <url>https://kodamaclass.com</url>
+        <email>kodama.edu@gmail.com</email>
+        <picture>https://kodamaclass.com/app/static/icons/apple-touch-icon.png</picture>
+        <description>Онлайн-школа программирования для детей. Индивидуальные занятия по IT, дизайну, созданию игр.
+        </description>
+        <currencies>
+            <currency id="RUR" rate="1"/>
+        </currencies>
+        <!-- Категории из рубрикатора Яндекса (только используемые) -->
+        <categories>
+            <category id="401">Графический дизайн</category>
+            <category id="116">Разработка игр</category>
+            <category id="10011">Программирование (школьное)</category>
+            <category id="411">3D-визуализация</category>
+            <category id="101">Веб-разработка</category>
+            <category id="104">Разработка на Python</category>
+            <category id="702">Разработка игр на Unity</category>
+            <category id="109">Алгоритмы и структуры данных</category>
+            <category id="106">Разработка на C++</category>
+        </categories>
+        <offers>
+            <!-- Графический дизайн в Figma -->
+            <offer id="figma1" available="true">
+                <name>Графический дизайн в Figma</name>
+                <url>https://kodamaclass.com/#figma</url>
+                <categoryId>401</categoryId>
+                <price>1000</price>
+                <currencyId>RUR</currencyId>
+                <picture>https://kodamaclass.com/app/static/images/course_figma1.webp</picture>
+                <description>Курс по созданию дизайна в Figma для детей. Ребёнок научится создавать макеты сайтов,
+                    приложений, иллюстрации и анимацию.
+                </description>
+                <param name="Ближайшая дата">2026-03-01</param>
+                <param name="Продолжительность" unit="месяц">6</param>
+                <param name="Формат обучения">С преподавателем</param>
+                <param name="Есть вебинары">true</param>
+                <param name="Есть домашние работы">true</param>
+                <param name="Сложность">Для новичков</param>
+                <param name="Тип обучения">Курс</param>
+                <param name="Есть бесплатная часть">true</param>
+                <param name="Результат обучения">Сертификат, портфолио проектов</param>
+                <param name="Часы в неделю">2</param>
+                <!-- Программа обучения (этапы) -->
+                <param name="План" order="1" unit="Основы Figma" hours="8">
+                    <![CDATA[ Знакомство с интерфейсом, инструментами, слоями. Создание простых фигур, работа с цветом и градиентами. ]]>
+                </param>
+                <param name="План" order="2" unit="Векторная графика и композиция" hours="10">
+                    <![CDATA[ Изучение принципов композиции, работа с текстом, создание логотипов и иконок. Практика: разработка фирменного стиля. ]]>
+                </param>
+                <param name="План" order="3" unit="Дизайн интерфейсов" hours="12">
+                    <![CDATA[ Создание макетов сайтов и мобильных приложений, использование компонентов и auto layout, прототипирование. ]]>
+                </param>
+                <param name="План" order="4" unit="Анимация и презентация проектов" hours="6">
+                    <![CDATA[ Добавление микроанимации, подготовка проектов к демонстрации, создание портфолио. ]]>
+                </param>
+            </offer>
+
+            <!-- Создание 2D игр на Scratch -->
+            <offer id="scratch1" available="true">
+                <name>Создание 2D игр на Scratch</name>
+                <url>https://kodamaclass.com/#scratch</url>
+                <categoryId>116</categoryId>
+                <price>1000</price>
+                <currencyId>RUR</currencyId>
+                <picture>https://kodamaclass.com/app/static/images/course_scratch1.webp</picture>
+                <description>Scratch — визуальная среда программирования, где ребёнок создаёт игры и анимации, развивая
+                    логику и творческое мышление.
+                </description>
+                <param name="Ближайшая дата">2026-03-01</param>
+                <param name="Продолжительность" unit="месяц">9</param>
+                <param name="Формат обучения">С преподавателем</param>
+                <param name="Есть вебинары">true</param>
+                <param name="Есть домашние работы">true</param>
+                <param name="Сложность">Для новичков</param>
+                <param name="Тип обучения">Курс</param>
+                <param name="Есть бесплатная часть">true</param>
+                <param name="Результат обучения">Сертификат, портфолио из 5+ игр</param>
+                <param name="Часы в неделю">2</param>
+                <param name="План" order="1" unit="Знакомство со Scratch" hours="8">
+                    <![CDATA[ Интерфейс, спрайты, сцены, блоки команд. Создание простых историй и анимаций. ]]>
+                </param>
+                <param name="План" order="2" unit="Основы игровой логики" hours="12">
+                    <![CDATA[ Переменные, условия, циклы. Разработка игр-кликеров, лабиринтов, сбор предметов. ]]>
+                </param>
+                <param name="План" order="3" unit="Сложные игровые механики" hours="14">
+                    <![CDATA[ Клоны, таймеры, управление персонажем, создание уровней. Проекты: арканоид, платформер. ]]>
+                </param>
+                <param name="План" order="4" unit="Мультиплеер и публикация" hours="8">
+                    <![CDATA[ Работа с облачными переменными, создание многопользовательских игр, публикация проектов в сообществе Scratch. ]]>
+                </param>
+            </offer>
+
+            <!-- Компьютерная грамотность с нуля -->
+            <offer id="comp_lit1" available="true">
+                <name>Компьютерная грамотность с нуля</name>
+                <url>https://kodamaclass.com/#computer-literacy</url>
+                <categoryId>10011</categoryId>
+                <price>1000</price>
+                <currencyId>RUR</currencyId>
+                <picture>https://kodamaclass.com/app/static/images/course_comp_lit1.webp</picture>
+                <description>Базовый курс для детей: устройство ПК, файлы, офисные программы, интернет и безопасность.
+                </description>
+                <param name="Ближайшая дата">2026-03-01</param>
+                <param name="Продолжительность" unit="месяц">3</param>
+                <param name="Формат обучения">С преподавателем</param>
+                <param name="Есть вебинары">true</param>
+                <param name="Есть домашние работы">true</param>
+                <param name="Сложность">Для новичков</param>
+                <param name="Тип обучения">Курс</param>
+                <param name="Есть бесплатная часть">true</param>
+                <param name="Результат обучения">Сертификат, умение работать в Word, Excel, PowerPoint</param>
+                <param name="Часы в неделю">2</param>
+                <param name="План" order="1" unit="Основы работы с компьютером" hours="4">
+                    <![CDATA[ Включение, выключение, рабочий стол, файлы и папки, стандартные программы. ]]>
+                </param>
+                <param name="План" order="2" unit="Microsoft Word и PowerPoint" hours="6">
+                    <![CDATA[ Создание текстовых документов, форматирование, вставка изображений. Разработка презентаций с анимацией. ]]>
+                </param>
+                <param name="План" order="3" unit="Excel и безопасность в интернете" hours="6">
+                    <![CDATA[ Таблицы, формулы, диаграммы. Правила безопасного поведения в сети, работа с электронной почтой. ]]>
+                </param>
+            </offer>
+
+            <!-- Создание 3D игр в Roblox Studio -->
+            <offer id="roblox1" available="true">
+                <name>Создание 3D игр в Roblox Studio</name>
+                <url>https://kodamaclass.com/#roblox</url>
+                <categoryId>116</categoryId>
+                <price>1000</price>
+                <currencyId>RUR</currencyId>
+                <picture>https://kodamaclass.com/app/static/images/course_roblox2.webp</picture>
+                <description>Разработка игр в Roblox Studio: 3D-моделирование, программирование на Lua, создание
+                    многопользовательских миров.
+                </description>
+                <param name="Ближайшая дата">2026-03-01</param>
+                <param name="Продолжительность" unit="месяц">9</param>
+                <param name="Формат обучения">С преподавателем</param>
+                <param name="Есть вебинары">true</param>
+                <param name="Есть домашние работы">true</param>
+                <param name="Сложность">Для новичков</param>
+                <param name="Тип обучения">Курс</param>
+                <param name="Есть бесплатная часть">true</param>
+                <param name="Результат обучения">Сертификат, собственная игра в Roblox</param>
+                <param name="Часы в неделю">2</param>
+                <param name="План" order="1" unit="Введение в Roblox Studio" hours="8">
+                    <![CDATA[ Интерфейс, базовые инструменты, создание террейна, добавление объектов. ]]>
+                </param>
+                <param name="План" order="2" unit="Программирование на Lua" hours="12">
+                    <![CDATA[ Переменные, условия, циклы, функции. Создание интерактивных элементов, дверей, ловушек. ]]>
+                </param>
+                <param name="План" order="3" unit="Игровые механики" hours="10">
+                    <![CDATA[ Система очков, таймеры, спавн предметов, создание NPC с искусственным интеллектом. ]]>
+                </param>
+                <param name="План" order="4" unit="Мультиплеер и публикация" hours="8">
+                    <![CDATA[ Работа с RemoteEvent, синхронизация игроков, публикация игры на платформе Roblox. ]]>
+                </param>
+            </offer>
+
+            <!-- 3D-моделирование в Blender -->
+            <offer id="blender1" available="true">
+                <name>3D-моделирование в Blender</name>
+                <url>https://kodamaclass.com/#blender</url>
+                <categoryId>411</categoryId>
+                <price>1000</price>
+                <currencyId>RUR</currencyId>
+                <picture>https://kodamaclass.com/app/static/images/course_blender2.webp</picture>
+                <description>Курс по созданию трёхмерных моделей и анимации в Blender. Ребёнок научится моделировать,
+                    текстурировать и анимировать объекты.
+                </description>
+                <param name="Ближайшая дата">2026-03-01</param>
+                <param name="Продолжительность" unit="месяц">9</param>
+                <param name="Формат обучения">С преподавателем</param>
+                <param name="Есть вебинары">true</param>
+                <param name="Есть домашние работы">true</param>
+                <param name="Сложность">Для новичков</param>
+                <param name="Тип обучения">Курс</param>
+                <param name="Есть бесплатная часть">true</param>
+                <param name="Результат обучения">Сертификат, портфолио 3D-моделей</param>
+                <param name="Часы в неделю">2</param>
+                <param name="План" order="1" unit="Основы Blender" hours="8">
+                    <![CDATA[ Интерфейс, навигация, создание примитивов, трансформации, работа с модификаторами. ]]>
+                </param>
+                <param name="План" order="2" unit="Полигональное моделирование" hours="12">
+                    <![CDATA[ Редактирование мешей, экструзия, сабдивижн, создание сложных форм (персонажи, предметы). ]]>
+                </param>
+                <param name="План" order="3" unit="Материалы и текстуры" hours="8">
+                    <![CDATA[ Настройка материалов, UV-развёртка, текстурирование, создание реалистичных поверхностей. ]]>
+                </param>
+                <param name="План" order="4" unit="Освещение и анимация" hours="8">
+                    <![CDATA[ Источники света, настройка сцены, анимация ключевыми кадрами, рендер готового проекта. ]]>
+                </param>
+            </offer>
+
+            <!-- Веб-разработка с нуля до публикации -->
+            <offer id="web_dev1" available="true">
+                <name>Веб-разработка с нуля до публикации</name>
+                <url>https://kodamaclass.com/#web-development</url>
+                <categoryId>101</categoryId>
+                <price>1000</price>
+                <currencyId>RUR</currencyId>
+                <picture>https://kodamaclass.com/app/static/images/course_web_dev1.webp</picture>
+                <description>Курс по созданию сайтов: HTML, CSS, JavaScript. Ребёнок научится верстать, программировать
+                    интерактив и публиковать проекты.
+                </description>
+                <param name="Ближайшая дата">2026-03-01</param>
+                <param name="Продолжительность" unit="месяц">9</param>
+                <param name="Формат обучения">С преподавателем</param>
+                <param name="Есть вебинары">true</param>
+                <param name="Есть домашние работы">true</param>
+                <param name="Сложность">Для новичков</param>
+                <param name="Тип обучения">Курс</param>
+                <param name="Есть бесплатная часть">true</param>
+                <param name="Результат обучения">Сертификат, 3+ готовых сайта</param>
+                <param name="Часы в неделю">2</param>
+                <param name="План" order="1" unit="Вёрстка на HTML и CSS" hours="12">
+                    <![CDATA[ Структура страницы, теги, стилизация, блочная модель, Flexbox, Grid. Создание лендинга. ]]>
+                </param>
+                <param name="План" order="2" unit="Адаптивность и работа с макетами" hours="10">
+                    <![CDATA[ Медиа-запросы, резиновая верстка, вырезание макетов из Figma, создание многостраничного сайта. ]]>
+                </param>
+                <param name="План" order="3" unit="JavaScript для интерактива" hours="12">
+                    <![CDATA[ Переменные, функции, события, DOM-манипуляции, создание игр на JS (крестики-нолики, угадай число). ]]>
+                </param>
+                <param name="План" order="4" unit="Продвинутый JS и публикация" hours="8">
+                    <![CDATA[ Работа с canvas, анимация, размещение сайта на хостинге, закрепление навыков. ]]>
+                </param>
+            </offer>
+
+            <!-- Основы программирования на Python -->
+            <offer id="python1" available="true">
+                <name>Основы программирования на Python</name>
+                <url>https://kodamaclass.com/#python</url>
+                <categoryId>104</categoryId>
+                <price>1000</price>
+                <currencyId>RUR</currencyId>
+                <picture>https://kodamaclass.com/app/static/images/course_python2.webp</picture>
+                <description>Изучение Python с нуля: от синтаксиса до создания приложений с графическим интерфейсом и
+                    веб-проектов.
+                </description>
+                <param name="Ближайшая дата">2026-03-01</param>
+                <param name="Продолжительность" unit="месяц">12</param>
+                <param name="Формат обучения">С преподавателем</param>
+                <param name="Есть вебинары">true</param>
+                <param name="Есть домашние работы">true</param>
+                <param name="Сложность">Для новичков</param>
+                <param name="Тип обучения">Курс</param>
+                <param name="Есть бесплатная часть">true</param>
+                <param name="Результат обучения">Сертификат, портфолио из 5+ проектов</param>
+                <param name="Часы в неделю">2</param>
+                <param name="План" order="1" unit="Основы синтаксиса и алгоритмы" hours="12">
+                    <![CDATA[ Переменные, типы данных, условия, циклы, функции. Решение задач, консольные программы. ]]>
+                </param>
+                <param name="План" order="2" unit="Структуры данных и ООП" hours="14">
+                    <![CDATA[ Списки, словари, кортежи, множества. Классы, объекты, наследование, инкапсуляция. ]]>
+                </param>
+                <param name="План" order="3" unit="Графический интерфейс и игры" hours="12">
+                    <![CDATA[ Библиотека tkinter, создание оконных приложений, простые 2D-игры с использованием pygame. ]]>
+                </param>
+                <param name="План" order="4" unit="Веб-разработка на Django" hours="12">
+                    <![CDATA[ Знакомство с фреймворком Django, создание веб-приложений, работа с базами данных, публикация проекта. ]]>
+                </param>
+            </offer>
+
+            <!-- Создание игр на Unity -->
+            <offer id="unity1" available="true">
+                <name>Создание игр на Unity</name>
+                <url>https://kodamaclass.com/#unity</url>
+                <categoryId>702</categoryId>
+                <price>1000</price>
+                <currencyId>RUR</currencyId>
+                <picture>https://kodamaclass.com/app/static/images/course_unity2.webp</picture>
+                <description>Разработка 2D и 3D игр на движке Unity с использованием C#. От простых арканоидов до
+                    многопользовательских проектов.
+                </description>
+                <param name="Ближайшая дата">2026-03-01</param>
+                <param name="Продолжительность" unit="месяц">12</param>
+                <param name="Формат обучения">С преподавателем</param>
+                <param name="Есть вебинары">true</param>
+                <param name="Есть домашние работы">true</param>
+                <param name="Сложность">Для новичков</param>
+                <param name="Тип обучения">Курс</param>
+                <param name="Есть бесплатная часть">true</param>
+                <param name="Результат обучения">Сертификат, портфолио игр (2D и 3D)</param>
+                <param name="Часы в неделю">2</param>
+                <param name="План" order="1" unit="Основы C# и Unity" hours="12">
+                    <![CDATA[ Интерфейс Unity, игровые объекты, компоненты, скрипты на C#, переменные, методы, условия. Создание простой 2D-игры. ]]>
+                </param>
+                <param name="План" order="2" unit="2D-игры и физика" hours="14">
+                    <![CDATA[ Коллайдеры, триггеры, Rigidbody, анимация спрайтов, разработка платформера, змейки, арканоида. ]]>
+                </param>
+                <param name="План" order="3" unit="3D-игры и ландшафты" hours="12">
+                    <![CDATA[ Работа в 3D-пространстве, камера, освещение, создание террейна, управление 3D-персонажем, разработка 3D-шутера. ]]>
+                </param>
+                <param name="План" order="4" unit="Мультиплеер и оптимизация" hours="10">
+                    <![CDATA[ Введение в сетевой код (Photon), создание многопользовательской игры, оптимизация, публикация. ]]>
+                </param>
+            </offer>
+
+            <!-- Подготовка к олимпиадам по программированию -->
+            <offer id="olympic1" available="true">
+                <name>Подготовка к олимпиадам по программированию</name>
+                <url>https://kodamaclass.com/#olympic-programming</url>
+                <categoryId>109</categoryId>
+                <price>1000</price>
+                <currencyId>RUR</currencyId>
+                <picture>https://kodamaclass.com/app/static/images/course_olympic1.webp</picture>
+                <description>Курс для углублённого изучения алгоритмов и структур данных, подготовка к олимпиадам по
+                    программированию.
+                </description>
+                <param name="Ближайшая дата">2026-03-01</param>
+                <param name="Продолжительность" unit="месяц">12</param>
+                <param name="Формат обучения">С преподавателем</param>
+                <param name="Есть вебинары">true</param>
+                <param name="Есть домашние работы">true</param>
+                <param name="Сложность">Для опытных</param>
+                <param name="Тип обучения">Курс</param>
+                <param name="Есть бесплатная часть">true</param>
+                <param name="Результат обучения">Сертификат, навыки решения олимпиадных задач</param>
+                <param name="Часы в неделю">3</param>
+                <param name="План" order="1" unit="Базовые алгоритмы и структуры" hours="16">
+                    <![CDATA[ Сортировки (пузырьковая, быстрая, слиянием), поиск (линейный, бинарный), рекурсия, стеки, очереди, деки. ]]>
+                </param>
+                <param name="План" order="2" unit="Динамическое программирование" hours="14">
+                    <![CDATA[ Задачи о рюкзаке, наибольшая общая подпоследовательность, расстояние Левенштейна, задача коммивояжёра. ]]>
+                </param>
+                <param name="План" order="3" unit="Графы и деревья" hours="16">
+                    <![CDATA[ Обходы в глубину и ширину, поиск кратчайших путей (Дейкстра, Флойд), алгоритмы на деревьях, топологическая сортировка. ]]>
+                </param>
+                <param name="План" order="4" unit="Продвинутые темы и разбор задач" hours="14">
+                    <![CDATA[ Строковые алгоритмы (префикс-функция, Z-функция), теория чисел, комбинаторика, разбор олимпиадных задач прошлых лет. ]]>
+                </param>
+            </offer>
+
+            <!-- Изучение языка C++ -->
+            <offer id="cpp1" available="true">
+                <name>Изучение языка C++</name>
+                <url>https://kodamaclass.com/#cpp</url>
+                <categoryId>106</categoryId>
+                <price>1000</price>
+                <currencyId>RUR</currencyId>
+                <picture>https://kodamaclass.com/app/static/images/course_cpp2.webp</picture>
+                <description>Курс по C++ для начинающих: от основ до объектно-ориентированного программирования и
+                    создания игр.
+                </description>
+                <param name="Ближайшая дата">2026-03-01</param>
+                <param name="Продолжительность" unit="месяц">12</param>
+                <param name="Формат обучения">С преподавателем</param>
+                <param name="Есть вебинары">true</param>
+                <param name="Есть домашние работы">true</param>
+                <param name="Сложность">Для новичков</param>
+                <param name="Тип обучения">Курс</param>
+                <param name="Есть бесплатная часть">true</param>
+                <param name="Результат обучения">Сертификат, портфолио из 2-х игр</param>
+                <param name="Часы в неделю">2</param>
+                <param name="План" order="1" unit="Основы C++" hours="12">
+                    <![CDATA[ Переменные, типы данных, ввод/вывод, условные операторы, циклы, массивы. Решение задач в консоли. ]]>
+                </param>
+                <param name="План" order="2" unit="Функции и указатели" hours="10">
+                    <![CDATA[ Функции, перегрузка, ссылки, указатели, работа с динамической памятью, связь с массивами. ]]>
+                </param>
+                <param name="План" order="3" unit="ООП в C++" hours="12">
+                    <![CDATA[ Классы, объекты, конструкторы и деструкторы, наследование, полиморфизм, инкапсуляция. Создание простых приложений. ]]>
+                </param>
+                <param name="План" order="4" unit="Создание игр с библиотекой SFML" hours="14">
+                    <![CDATA[ Установка SFML, работа с графикой, обработка событий, разработка игр (змейка, тетрис, арканоид). ]]>
+                </param>
+            </offer>
+        </offers>
+    </shop>
+</yml_catalog>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://kodamaclass.com/">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CH9RZDM1S4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-CH9RZDM1S4');
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=104045899', 'ym');
+
+        ym(104045899, 'init', {
+            ssr: true,
+            webvisor: true,
+            clickmap: true,
+            ecommerce: "dataLayer",
+            accurateTrackBounce: true,
+            trackLinks: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/104045899" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+    <title>Онлайн-курсы для детей по IT, дизайну и созданию игр | Kodama</title>
+
+    <meta name="description"
+          content="Бесплатный пробный урок! Индивидуальные онлайн-занятия для детей 7–16 лет по IT, дизайну и созданию игр. Scratch, Python, Roblox, Figma. Опытные преподаватели. Гибкое расписание.">
+    <meta name="keywords"
+          content="программирование для детей, онлайн уроки, Scratch, Python, Unity, Roblox Studio, Figma, Blender, Сайты, веб-разработка, курсы программирования">
+    <meta name="author" content="Kodama">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Онлайн-курсы для детей по IT, дизайну и созданию игр | Kodama">
+    <meta property="og:site_name" content="Kodama">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:description"
+          content="Бесплатный пробный урок! Индивидуальные онлайн-занятия для детей 7–16 лет по IT, дизайну и созданию игр. Scratch, Python, Roblox, Figma. Опытные преподаватели. Гибкое расписание.">
+    <meta property="og:image" content="https://kodamaclass.com/app/static/images/right_image_about.webp">
+    <meta property="og:url" content="https://kodamaclass.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Онлайн-курсы для детей по IT, дизайну и созданию игр | Kodama">
+    <meta name="twitter:description"
+          content="Бесплатный пробный урок! Индивидуальные онлайн-занятия для детей 7–16 лет по IT, дизайну и созданию игр. Scratch, Python, Roblox, Figma. Опытные преподаватели. Гибкое расписание.">
+    <meta name="twitter:image" content="https://kodamaclass.com/app/static/images/right_image_about.webp">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', path='/icons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', path='/icons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', path='/icons/favicon-16x16.png') }}">
+</head>
+<body id="home">
+{% include "templates/header.html" %}
+
+{% include "templates/start_section.html" %}
+
+<div id="ground"></div>
+
+{% include "templates/mobile_menu.html" %}
+
+{% include "templates/about_section.html" %}
+
+<div id="between-decor-purple">
+    <h3>Знания, приключения и веселье: выбери свой путь</h3>
+</div>
+
+{% include "templates/courses_section.html" %}
+
+{% include "templates/questions_section.html" %}
+
+{% include "templates/submit_app_section.html" %}
+
+{% include "templates/footer.html" %}
+
+<script>
+    const images = "{{ url_for('static', path='/images') }}";
+</script>
+<script src="{{ url_for('static', path='js/main.js') }}" defer></script>
+<script src="{{ url_for('static', path='js/desktop.js') }}" defer></script>
+<script src="{{ url_for('static', path='js/about.js') }}" defer></script>
+<script src="{{ url_for('static', path='js/courses.js') }}" defer></script>
+<script src="{{ url_for('static', path='js/mobile_menu.js') }}" defer></script>
+<script src="{{ url_for('static', path='js/submit_app.js') }}" defer></script>
+<script src="{{ url_for('static', path='js/faq.js') }}" defer></script>
+<script type="module">
+    (function (w, d, u) {
+        var s = d.createElement('script');
+        s.async = true;
+        s.src = u + '?' + (Date.now() / 60000 | 0);
+        var h = d.getElementsByTagName('script')[0];
+        h.parentNode.insertBefore(s, h);
+    })(window, document, 'https://cdn-ru.bitrix24.ru/b30468202/crm/site_button/loader_2_q99zpy.js');
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "Kodama",
+                "url": "https://kodamaclass.com/",
+                "logo": "https://kodamaclass.com/app/static/icons/apple-touch-icon.png",
+                "image": "https://kodamaclass.com/app/static/images/right_image_about.webp",
+                "description": "Индивидуальные онлайн-уроки программирования для детей 7–16 лет. Python, Scratch, создание игр и веб-сайтов.",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+7-985-260-33-74",
+                    "contactType": "customer support",
+                    "areaServed": "RU",
+                    "availableLanguage": [
+                        "Russian"
+                    ]
+                },
+                "sameAs": [
+                    "https://wa.me/79852603374",
+                    "https://t.me/landfathich"
+                ]
+            },
+            {
+                "@type": "Course",
+                "name": "Графический дизайн в Figma",
+                "description": "Figma — это простая и удобная программа для создания дизайна. Ребенок научится придумывать и рисовать макеты сайтов, приложений и других проектов. Программа работает прямо в браузере, что позволяет легко работать и делиться результатами.",
+                "image": "https://kodamaclass.com/app/static/images/course_figma1.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Kodama"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "1000",
+                    "priceCurrency": "RUB"
+                },
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedMinAge": 7,
+                    "suggestedMaxAge": 16
+                }
+            },
+            {
+                "@type": "Course",
+                "name": "Создание 2D игр на Scratch",
+                "description": "Scratch — это визуальная платформа программирования для детей, где они могут создавать игры, мультфильмы и интерактивные истории. Курс помогает развить логическое мышление и креативность.",
+                "image": "https://kodamaclass.com/app/static/images/course_scratch1.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Kodama"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "1000",
+                    "priceCurrency": "RUB"
+                },
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedMinAge": 8,
+                    "suggestedMaxAge": 14
+                }
+            },
+            {
+                "@type": "Course",
+                "name": "Компьютерная грамотность с нуля",
+                "description": "Курс обучает детей основам работы с компьютером: офисные программы, браузер, электронная почта, безопасное поведение в интернете.",
+                "image": "https://kodamaclass.com/app/static/images/course_comp_lit1.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Kodama"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "1000",
+                    "priceCurrency": "RUB"
+                },
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedMinAge": 7,
+                    "suggestedMaxAge": 14
+                }
+            },
+            {
+                "@type": "Course",
+                "name": "Создание 3D игр в Roblox Studio",
+                "description": "Курс учит детей создавать свои собственные игры и миры в Roblox. Дети изучат основы программирования и дизайна, научатся использовать инструменты Roblox Studio.",
+                "image": "https://kodamaclass.com/app/static/images/course_roblox2.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Kodama"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "1000",
+                    "priceCurrency": "RUB"
+                },
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedMinAge": 8,
+                    "suggestedMaxAge": 14
+                }
+            },
+            {
+                "@type": "Course",
+                "name": "3D-моделирование в Blender",
+                "description": "Blender — это мощная программа для 3D-моделирования и анимации. Ребенок научится создавать трехмерные модели, анимации и визуальные эффекты.",
+                "image": "https://kodamaclass.com/app/static/images/course_blender2.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Kodama"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "1000",
+                    "priceCurrency": "RUB"
+                },
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedMinAge": 10,
+                    "suggestedMaxAge": 16
+                }
+            },
+            {
+                "@type": "Course",
+                "name": "Веб-разработка с нуля до публикации",
+                "description": "Курс по созданию сайтов познакомит детей с основами веб-разработки. Ребенок научится создавать красивые и функциональные сайты, используя HTML, CSS и JavaScript.",
+                "image": "https://kodamaclass.com/app/static/images/course_web_dev1.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Kodama"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "1000",
+                    "priceCurrency": "RUB"
+                },
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedMinAge": 9,
+                    "suggestedMaxAge": 15
+                }
+            },
+            {
+                "@type": "Course",
+                "name": "Основы программирования на Python",
+                "description": "Python — это один из самых популярных языков программирования для начинающих. Ребенок освоит базовые концепции программирования и научится писать простые программы.",
+                "image": "https://kodamaclass.com/app/static/images/course_python2.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Kodama"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "1000",
+                    "priceCurrency": "RUB"
+                },
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedMinAge": 10,
+                    "suggestedMaxAge": 16
+                }
+            },
+            {
+                "@type": "Course",
+                "name": "Создание игр на Unity",
+                "description": "Unity — это мощный игровой движок для создания 2D и 3D игр. Ребенок научится разрабатывать свои собственные игры, изучая основы игрового дизайна и программирования на C#.",
+                "image": "https://kodamaclass.com/app/static/images/course_unity2.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Kodama"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "1000",
+                    "priceCurrency": "RUB"
+                },
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedMinAge": 11,
+                    "suggestedMaxAge": 16
+                }
+            },
+            {
+                "@type": "Course",
+                "name": "Подготовка к олимпиадам по программированию",
+                "description": "Курс по олимпиадному программированию поможет детям развить логическое мышление и навыки решения сложных задач. Ребенок познакомится с алгоритмами и структурами данных.",
+                "image": "https://kodamaclass.com/app/static/images/course_olympic1.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Kodama"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "1000",
+                    "priceCurrency": "RUB"
+                },
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedMinAge": 12,
+                    "suggestedMaxAge": 16
+                }
+            },
+            {
+                "@type": "Course",
+                "name": "Изучение языка C++",
+                "description": "C++ — это мощный язык программирования для разработки игр и системного программирования. Ребенок освоит основы C++ и научится писать эффективный код.",
+                "image": "https://kodamaclass.com/app/static/images/course_cpp2.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Kodama"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "1000",
+                    "priceCurrency": "RUB"
+                },
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "suggestedMinAge": 11,
+                    "suggestedMaxAge": 16
+                }
+            }
+        ]
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Нужно ли ученику куда-то идти для обучения?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Нет, ученику не нужно выходить из дома. Все занятия проходят онлайн."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Каким образом проходит обучение?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Каждый урок проходит в режиме реального времени с участием вашего преподавателя. Преподаватель будет активно взаимодействовать с учеником, помогая ему на протяжении всего занятия. Для этого используется программа, которая позволяет преподавателю видеть экран ученика, чтобы лучше понимать его текущие действия."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Обучение индивидуальное или групповое?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Обучение проводится индивидуально. Мы подберем преподавателя, который лучше всего подойдет вашему ребенку."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какова стоимость занятий?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Стоимость одного занятия — 1000 рублей. Доступны пакеты из 5, 10, 15 и более уроков. Оплата происходит только за фактически проведенные занятия."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие навыки мой ребенок приобретет?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Навыки зависят от курса. Ребенок может научиться программированию, развить логическое и креативное мышление, освоить графический дизайн, работу с текстами и презентациями, безопасное поведение в интернете, а также навыки работы в 3D-редакторе и создания игр."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Сколько длится курс?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Продолжительность курса варьируется от 6 месяцев до 2 лет и зависит от программы и количества занятий в неделю. Мы предлагаем гибкие программы, подстраивающиеся под темп обучения ребенка."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Сколько времени длится занятие?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "В нашей школе каждое занятие длится 55 минут и начинается в начале часа."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Сколько раз можно заниматься в неделю?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Вы можете заниматься 1, 2, 3 раза в неделю или больше. Мы подстроим расписание под ваши предпочтения."
+                }
+            }
+        ]
+    }
+</script>
+</body>
+</html>

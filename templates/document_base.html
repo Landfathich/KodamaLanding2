@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Kodama{% endblock %}</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/documents.css') }}">
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', path='/icons/favicon-96x96.png') }}" sizes="96x96"/>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', path='/icons/favicon.svg') }}"/>
+    <link rel="shortcut icon" href="{{ url_for('static', path='/icons/favicon.ico') }}"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', path='/icons/apple-touch-icon.png') }}"/>
+    <meta name="apple-mobile-web-app-title" content="Kodama"/>
+    <link rel="manifest" href="{{ url_for('static', path='/icons/site.webmanifest') }}"/>
+
+    <meta name="description"
+          content="Официальные документы онлайн-школы программирования Kodama. Публичная оферта и политика обработки персональных данных.">
+</head>
+<body>
+
+<nav class="document-actions">
+    <div class="action-header">
+        <a href="/" class="logo-link" title="Kodama School - главная страница">
+            <div class="logo"></div>
+        </a>
+        <div class="action-buttons">
+            <button onclick="window.print()" class="action-btn" title="Скачать PDF">Скачать PDF</button>
+        </div>
+    </div>
+</nav>
+
+<header>
+    <h1>{% block document_title %}Документ{% endblock %}</h1>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+</body>
+</html>
