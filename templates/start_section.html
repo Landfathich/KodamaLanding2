@@ -1,25 +1,73 @@
 <section id="start-section">
-    <div id="mountains"></div>
-    <div id="right-tree"></div>
-    <div id="left-cloud"></div>
-    <div id="right-cloud"></div>
-    <div id="mashroom"></div>
-    <div id="hearts"></div>
-    <div id="stars"></div>
-    <div id="kodamic"></div>
-    <div class="start-content">
-        <h2>Онлайн-школа программирования</h2>
-        <h1>K<span class="blue-letter">O</span>D<span class="purple-letter">A</span><span class="blue-letter">M</span>A
-        </h1>
-        <div id="main-btn-container">
-            <img id="main-btn" src="{{ url_for('static', path='/images/start_red_btn.webp') }}">
-            <div>Присоединяйся к нам и начни<br> свой увлекательный путь программирования!</div>
+    <div class="hero-container">
+        <div class="hero-left">
+            <h1 class="hero-title">Создаём игры, сайты и&nbsp;дизайн вместе с&nbsp;ребёнком</h1>
+            <p class="hero-subtitle">Индивидуальные онлайн-занятия для детей 7−17 лет. Первый проект — уже на бесплатном
+                уроке.</p>
+
+            <div class="hero-image">
+                <img src="{{ url_for('static', path='/images/hero.webp') }}" alt="Ребёнок создаёт свой проект">
+                <div class="hero-image-badge">Свой проект с первого занятия</div>
+            </div>
+
+            <div class="hero-advantages">
+                <div class="advantage-item">
+                    <span class="advantage-icon">👨‍💻</span>
+                    <span>Индивидуально с преподавателем</span>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-icon">🎮</span>
+                    <span>Обучение через интересы ребёнка</span>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-icon">📈</span>
+                    <span>Реальные проекты с первого урока</span>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-icon">💬</span>
+                    <span>Обратная связь родителю</span>
+                </div>
+            </div>
         </div>
 
-        <div id="select-course">
-            <a href="#courses" id="select-course-btn-link">
-                <img id="select-course-btn" src="{{ url_for('static', path='/images/select_course_btn.webp') }}">
-            </a>
+        <div class="hero-right">
+            <div class="hero-form-card">
+                <div class="hero-form-header">
+                    <h2>Бесплатный урок</h2>
+                    <div class="hero-form-tags">
+                        <span>онлайн</span>
+                        <span>1 на 1</span>
+                        <span>55 минут</span>
+                    </div>
+                </div>
+
+                <form id="hero-form" class="hero-form">
+                    <input type="text" name="parent_name" placeholder="Имя родителя" autocomplete="name" required>
+                    <input type="tel" name="phone" placeholder="+7 (000) 000-00-00" autocomplete="tel" required>
+                    <input type="email" name="email" placeholder="Почта родителя" autocomplete="email" required>
+
+                    <select name="child_age" class="hero-select" required>
+                        <option value="" disabled selected>Возраст ребёнка</option>
+                        <option value="7-9">7-9 лет</option>
+                        <option value="10-12">10-12 лет</option>
+                        <option value="13-15">13-15 лет</option>
+                        <option value="16-17">16-17 лет</option>
+                    </select>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="agree_personal" required>
+                        <span>Соглашаюсь на обработку персональных данных</span>
+                    </label>
+
+                    <button type="submit" class="hero-submit-btn">Записаться</button>
+
+                    <p class="hero-form-note">Нажимая кнопку, вы принимаете условия оферты</p>
+                    <p class="hero-form-bonus">🎁 Урок бесплатный — просто попробуйте</p>
+                </form>
+                <div class="hero-form-decoration">
+                    <img src="{{ url_for('static', path='/images/hero_side.jpg') }}" alt="Ребёнок за компьютером">
+                </div>
+            </div>
         </div>
     </div>
 </section>
