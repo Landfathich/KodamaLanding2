@@ -78,25 +78,29 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', path='/icons/favicon-16x16.png') }}">
 </head>
 <body id="home">
-{% include "templates/header.html" %}
 
-{% include "templates/start_section.html" %}
+<div class="page-wrapper">
+    {% include "templates/header.html" %}
 
-<div id="ground"></div>
+    {% include "templates/start_section.html" %}
 
-{% include "templates/mobile_menu.html" %}
+    <div id="ground"></div>
 
-{% include "templates/about_section.html" %}
+    {% include "templates/mobile_menu.html" %}
 
-<div id="between-decor-purple">
-    <h3>Знания, приключения и веселье: выбери свой путь</h3>
+    {% include "templates/about_section.html" %}
+
+    <div id="between-decor-purple">
+        <h3>Знания, приключения и веселье: выбери свой путь</h3>
+    </div>
+
+    {% include "templates/courses_section.html" %}
+
+    {% include "templates/questions_section.html" %}
+
+    {% include "templates/submit_app_section.html" %}
+
 </div>
-
-{% include "templates/courses_section.html" %}
-
-{% include "templates/questions_section.html" %}
-
-{% include "templates/submit_app_section.html" %}
 
 {% include "templates/footer.html" %}
 

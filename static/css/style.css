@@ -16,6 +16,10 @@
     url(../fonts/SuperMario286/SuperMario286.otf) format('otf');
 }
 
+:root {
+    --container-width: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -31,6 +35,7 @@ body {
     font-family: 'SuperMario', sans-serif;
     color: white;
     line-height: 1.5;
+    background-color: #fafffd;
 }
 
 section[id] {
@@ -52,4 +57,33 @@ section[id] {
     .no-scroll {
         overflow: hidden;
     }
+}
+
+/* Планшеты */
+@media (min-width: 768px) {
+    :root {
+        --container-width: 92%;
+    }
+}
+
+/* Десктопы */
+@media (min-width: 1024px) {
+    :root {
+        --container-width: 85%;
+    }
+}
+
+/* Большие экраны */
+@media (min-width: 1440px) {
+    :root {
+        --container-width: 78%;
+    }
+}
+
+/* Применяем */
+.page-wrapper {
+    width: var(--container-width);
+    max-width: 1280px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }

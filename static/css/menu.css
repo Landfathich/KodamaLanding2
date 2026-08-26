@@ -1,16 +1,21 @@
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(var(--container-width) - 40px); /* вычитаем margin по бокам */
+    max-width: 1240px;
+    height: 70px;
+    padding: 0 20px; /* внутренний отступ для контента */
     color: white;
-    height: 8vh;
     background-color: rgba(231, 105, 228, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 10px;
     z-index: 3;
+    box-sizing: border-box;
 }
 
 .mobile-menu-icon {
@@ -178,6 +183,7 @@ header {
         justify-content: space-between;
         align-items: center;
         height: 7vh;
+        padding: 0 16px;
     }
 
     .menu {
