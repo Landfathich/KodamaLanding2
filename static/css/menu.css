@@ -3,8 +3,8 @@ header {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(var(--container-width) - 40px);
-    max-width: 1240px;
+    width: var(--container-width);
+    max-width: 1280px;
     height: 70px;
     padding: 0 20px;
     color: white;
