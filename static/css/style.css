@@ -10,10 +10,8 @@
 
 @font-face {
     font-family: 'SuperMario';
-    src: url(../fonts/SuperMario286/SuperMario286.woff) format('woff'),
-    url(../fonts/SuperMario286/SuperMario286.ttf) format('ttf'),
-    url(../fonts/SuperMario286/SuperMario286.woff2) format('woff2'),
-    url(../fonts/SuperMario286/SuperMario286.otf) format('otf');
+    src: url(../fonts/SuperMario286/SuperMario286.woff2) format('woff2');
+    font-display: swap;
 }
 
 :root {
@@ -32,11 +30,16 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: #333;
-    background-color: #fafffd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 section[id] {
