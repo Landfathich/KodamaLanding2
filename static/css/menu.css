@@ -3,19 +3,41 @@ header {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(var(--container-width) - 40px); /* вычитаем margin по бокам */
+    width: calc(var(--container-width) - 40px);
     max-width: 1240px;
     height: 70px;
-    padding: 0 20px; /* внутренний отступ для контента */
+    padding: 0 20px;
     color: white;
-    background-color: rgba(231, 105, 228, 0.25);
+    background-color: rgba(101, 101, 101, 0.65);
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 30px;
     z-index: 3;
     box-sizing: border-box;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #E769E4, #400D69);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+    white-space: nowrap;
 }
 
 .mobile-menu-icon {
@@ -52,20 +74,15 @@ header {
     box-shadow: 0 2px 10px gray;
 }
 
-.menu {
-    height: 100%;
-    padding-right: 1%;
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .menu-item {
     text-decoration: none;
-    font-size: 2vw;
-    transition: 0.5s;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4a4a4a;
+    transition: 0.3s;
+    opacity: 0.8;
 }
+
 
 .menu-button-scrolled {
     color: black;
@@ -80,7 +97,7 @@ header {
 }
 
 .menu-button-no-scrolled:hover {
-    color: #E769E4;
+    color: #e3e3e3;
 }
 
 #mobile-menu {
@@ -132,48 +149,9 @@ header {
     background-repeat: no-repeat;
 }
 
-#nav-mobile-menu a {
-    display: inline-block;
-    color: #400D69;
-    margin-left: 10%;
-    margin: 3%;
-    font-size: 7.5vw;
-    text-decoration: none;
-}
-
-/* Стили для контактов в хедере */
-.header-contacts {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin: 0 20px;
-    color: black;
-}
-
-.contact-phone {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    white-space: nowrap;
-}
-
-.contact-buttons {
-    display: flex;
-    gap: 8px;
-}
-
-.header-scrolled .contact-phone {
-    color: black;
-}
-
-.header-scrolled .contact-btn {
-    background: rgba(64, 13, 105, 0.1);
-}
-
-.header-scrolled .contact-btn:hover {
-    background: rgba(64, 13, 105, 0.2);
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 105, 228, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -215,14 +193,10 @@ header {
     }
 
     #logo-link {
-        width: 23vw;
+        width: 29vw;
     }
 
-    .header-contacts {
-        margin: 0;
-    }
-
-    .contact-phone {
-        font-size: 14px;
+    .cta-button {
+        display: none;
     }
 }
