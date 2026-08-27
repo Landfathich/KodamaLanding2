@@ -12,7 +12,9 @@ TABLE_ID = "1zAsg7X1S1RiGG51qMK2RiEXUWxpJ9MaYhcWGlHzc5xQ"
 
 # Нужно вмонтировать папку kodama-secrets так:
 # -v /var/lib/dokku/data/storage/kodama-secrets:/app/secrets
-KEY_PATH = '/app/secrets/kodama-storage-b9df0175c688.json'
+# Путь к ключу: на сервере /app/secrets/..., локально в корне проекта
+# TODO На сервере: задайте переменную окружения GOOGLE_SHEETS_KEY_PATH=/app/secrets/kodama-storage-b9df0175c688.json
+KEY_PATH = os.getenv("GOOGLE_SHEETS_KEY_PATH", "kodama-storage-b9df0175c688.json")
 
 
 # Ссылка на таблицу: https://docs.google.com/spreadsheets/d/1zAsg7X1S1RiGG51qMK2RiEXUWxpJ9MaYhcWGlHzc5xQ/edit
@@ -45,7 +47,7 @@ def insert_test_row(table: Spreadsheet, sheet_name: str) -> None:
         "курс", "имя", "коммент", "статус"
     ]
     worksheet.insert_row(test_data, index=next_row)
-    logger.info(f"Добавлена строка {next_row} с тестовыми данными")
+    logger.info(f"✅ Добавлена строка {next_row} с тестовыми данными")
 
 
 def test_insert_new_row():
@@ -58,7 +60,7 @@ def test_insert_new_row():
 def insert_new_row(
         mail: str,
         phone: str,
-        course: str = "Не выбран",
+        child_age: str = "Не выбран",
         name: str = "",
         is_policy_accepted: str = "",
         comment: str = "",
@@ -83,7 +85,7 @@ def insert_new_row(
             phone,
             str(datetime.date.today()),
             datetime.datetime.now(timezone).time().strftime("%H:%M"),
-            course,
+            child_age,
             name,
             comment,
             is_policy_accepted,
@@ -91,9 +93,9 @@ def insert_new_row(
         ]
 
         worksheet.insert_row(data, index=next_row)
-        logger.info(f"Добавлена строка {next_row}")
+        logger.info(f"✅ Добавлена строка {next_row}")
         return True
 
     except Exception as e:
-        logger.error(f"Ошибка Google Sheets: {type(e).__name__}: {e}")
+        logger.error(f"❌ Ошибка Google Sheets: {type(e).__name__}: {e}")
         return False

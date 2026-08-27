@@ -1,0 +1,113 @@
+const heroForm = document.getElementById('hero-form');
+
+function isValidName(name) {
+    if (name.length < 2 || name.length > 50) return false;
+    return /^[A-Za-zА-Яа-яЁё\s\-']+$/.test(name);
+}
+
+function isValidPhone(phone) {
+    const digits = phone.replace(/\D/g, '');
+    return digits.length >= 5 && digits.length <= 15;
+}
+
+function formatPhone(phone) {
+    return phone.replace(/\D/g, '');
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email) && email.length <= 100;
+}
+
+heroForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const now = Date.now();
+    if (now - (window.lastHeroSubmitTime || 0) < 3000) {
+        alert("Подождите 3 секунды перед повторной отправкой");
+        return;
+    }
+    window.lastHeroSubmitTime = now;
+
+    const parentName = heroForm.querySelector('input[name="parent_name"]').value.trim();
+    const phone = heroForm.querySelector('input[name="phone"]').value.trim();
+    const email = heroForm.querySelector('input[name="email"]').value.toLowerCase().trim();
+    const childAge = heroForm.querySelector('select[name="child_age"]').value;
+    const agreePersonal = heroForm.querySelector('input[name="agree_personal"]').checked;
+    const csrfToken = heroForm.querySelector('input[name="csrf_token"]').value.trim();
+
+    if (!isValidName(parentName)) {
+        alert("Имя: только буквы, пробелы, дефисы. От 2 до 50 символов.");
+        return;
+    }
+
+    if (!isValidPhone(phone)) {
+        alert("Телефон: от 5 до 15 цифр");
+        return;
+    }
+
+    if (!isValidEmail(email)) {
+        alert("Введите корректный email");
+        return;
+    }
+
+    if (!childAge) {
+        alert("Выберите возраст ребёнка");
+        return;
+    }
+
+    if (!agreePersonal) {
+        alert("Необходимо согласие с политикой конфиденциальности");
+        return;
+    }
+
+    if (!csrfToken || csrfToken.length < 10) {
+        alert("Ошибка безопасности. Обновите страницу.");
+        return;
+    }
+
+    const submitButton = heroForm.querySelector('.hero-submit-btn');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Отправка...';
+
+    const formData = new FormData();
+    formData.append("name", parentName);
+    formData.append("tel", formatPhone(phone));
+    formData.append("email", email);
+    formData.append("child_age", childAge);
+    formData.append("is_policy_accepted", agreePersonal);
+
+    fetch('/request', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRF-Token': csrfToken
+        }
+    })
+        .then(response => {
+            return response.json().then(data => ({
+                ok: response.ok,
+                status: response.status,
+                data: data
+            })).catch(() => ({
+                ok: response.ok,
+                status: response.status,
+                data: {detail: `Ошибка ${response.status}`}
+            }));
+        })
+        .then(result => {
+            if (result.ok) {
+                window.location.href = '/thank-you';
+            } else {
+                alert("Ошибка: " + (result.data.detail || "Неверные данные"));
+            }
+        })
+        .catch(error => {
+            console.log("Сетевая ошибка:", error);
+            alert("К сожалению, произошла ошибка. Свяжитесь с нами по телефону +7 (985) 260-33-74");
+        })
+        .finally(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Записаться';
+        });
+});

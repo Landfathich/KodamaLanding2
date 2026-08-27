@@ -41,9 +41,11 @@
                     </div>
                 </div>
 
-                <form id="hero-form" class="hero-form">
-                    <input type="text" name="parent_name" placeholder="Имя родителя" autocomplete="name" required>
-                    <input type="tel" name="phone" placeholder="+7 (000) 000-00-00" autocomplete="tel" required>
+                <form id="hero-form" class="hero-form" method="post">
+                    <input type="text" name="parent_name" placeholder="Имя родителя"
+                           autocomplete="name" minlength="2" maxlength="50" required>
+                    <input type="tel" name="phone" placeholder="+7 (000) 000-00-00"
+                           autocomplete="tel" minlength="5" maxlength="30" required>
                     <input type="email" name="email" placeholder="Почта родителя" autocomplete="email" required>
 
                     <select name="child_age" class="hero-select" required>
@@ -56,12 +58,21 @@
 
                     <label class="checkbox-label">
                         <input type="checkbox" name="agree_personal" required>
-                        <span>Соглашаюсь на обработку персональных данных</span>
+                        <span>Соглашаюсь на обработку <a href="/privacy" target="_blank">персональных данных</a></span>
                     </label>
+
+                    {#TODO добавить когда будет активные рассылки#}
+                    {#<label class="checkbox-label">
+                        <input type="checkbox" name="agree_ads" checked>
+                        <span>Соглашаюсь на получение <a href="/advertising" target="_blank">информационных и рекламных сообщений</a></span>
+                    </label>#}
+
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
 
                     <button type="submit" class="hero-submit-btn">Записаться</button>
 
-                    <p class="hero-form-note">Нажимая кнопку, вы принимаете условия оферты</p>
+                    <p class="hero-form-note">Нажимая кнопку, вы принимаете <a href="/offer" target="_blank">условия
+                        оферты</a></p>
                     <p class="hero-form-bonus">🎁 Урок бесплатный — просто попробуйте</p>
                 </form>
                 <div class="hero-form-decoration">

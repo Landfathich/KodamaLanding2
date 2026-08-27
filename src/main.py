@@ -1,24 +1,25 @@
-import asyncio
 import logging
 import os
 from pathlib import Path
 
 import uvicorn
 from dotenv import load_dotenv
+
+load_dotenv()
+
 from fastapi import FastAPI, Request, Form, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+from src.crm import send_lead_to_crm
 from src.emails import send_email_about_new_client
 from src.sheets import insert_new_row
-from src.crm import send_lead_to_crm
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-load_dotenv()
 ROOT_DIRECTORY = Path(__file__).resolve().parent.parent
 root = Jinja2Templates(ROOT_DIRECTORY)
 
@@ -36,68 +37,41 @@ class ApplicationRequest(BaseModel):
     name: str
     email: str
     tel: str
-    course: str
+    child_age: str
     is_policy_accepted: str
 
-    # Валидация имени (точно как на фронтенде)
     @field_validator('name')
     def validate_name(cls, v):
         v = v.strip()
         if len(v) < 2 or len(v) > 50:
             raise ValueError('Имя должно быть от 2 до 50 символов')
-
-        # Только буквы, пробелы, дефисы, апострофы
         if not re.fullmatch(r'^[A-Za-zА-Яа-яЁё\s\-\']+$', v):
             raise ValueError('Имя может содержать только буквы, пробелы и дефисы')
-
         return v
 
-    # Валидация телефона (очистка до цифр)
     @field_validator('tel')
     def validate_phone(cls, v):
-        digits = re.sub(r'\D', '', v)  # Только цифры
-
+        digits = re.sub(r'\D', '', v)
         if len(digits) < 5 or len(digits) > 15:
             raise ValueError('Телефон должен содержать от 5 до 15 цифр')
+        return digits
 
-        return digits  # Возвращаем только цифры!
-
-    # Валидация email
     @field_validator('email')
     def validate_email(cls, v):
         v = v.strip().lower()
-
         if not re.match(r'^[^\s@]+@[^\s@]+\.[^\s@]+$', v):
             raise ValueError('Введите корректный email адрес')
-
         if len(v) > 100:
             raise ValueError('Email слишком длинный')
-
         return v
 
-    # Валидация курса (белый список)
-    @field_validator('course')
-    def validate_course(cls, v):
-        ALLOWED_COURSES = {
-            'Figma',
-            'Компьютер с нуля',
-            'Scratch',
-            'Roblox Studio',
-            'Моделирование в Blender',
-            'Создание сайтов',
-            'Программирование на Python',
-            'Создание игр на Unity',
-            'Подготовка к олимпиадам по программированию',
-            'Изучение языка C++',
-            'Не могу определиться'
-        }
-
-        if v not in ALLOWED_COURSES:
-            raise ValueError('Выбран недопустимый курс')
-
+    @field_validator('child_age')
+    def validate_child_age(cls, v):
+        ALLOWED_AGES = {'7-9', '10-12', '13-15', '16-17'}
+        if v not in ALLOWED_AGES:
+            raise ValueError('Выбран недопустимый возраст')
         return v
 
-    # Валидация согласия с политикой
     @field_validator('is_policy_accepted')
     def validate_policy(cls, v):
         accepted_values = {'true', '1', 'yes', 'да'}
@@ -154,6 +128,10 @@ def make_up():
         csrf_protect.set_csrf_cookie(signed_token, response)
         return response
 
+    @app.get("/thank-you")
+    async def thank_you(request: Request):
+        return root.TemplateResponse("templates/thank_you.html", {"request": request})
+
     @app.get("/offer")
     async def offer_page(request: Request):
         return root.TemplateResponse("templates/offer.html", {"request": request})
@@ -161,6 +139,10 @@ def make_up():
     @app.get("/privacy")
     async def privacy_policy(request: Request):
         return root.TemplateResponse("templates/privacy.html", {"request": request})
+
+    # @app.get("/advertising")
+    # async def privacy_policy(request: Request):
+    #     return root.TemplateResponse("templates/advertising.html", {"request": request})
 
     @app.get("/sitemap.xml")
     async def sitemap():
@@ -208,7 +190,7 @@ def make_up():
         path = ROOT_DIRECTORY / "static" / "icons" / "android-chrome-512x512.png"
         return FileResponse(path)
 
-    async def send_email_background(message):
+    def send_email_background(message):
         try:
             result = send_email_about_new_client(message)
             if result:
@@ -218,11 +200,11 @@ def make_up():
         except Exception as e:
             logger.error(f"Критическая ошибка при отправке email: {e}")
 
-    async def insert_row_background(email, tel, course, name, is_policy_accepted):
+    def insert_row_background(email, tel, child_age, name, is_policy_accepted):
         result = insert_new_row(
             mail=email,
             phone=tel,
-            course=course,
+            child_age=child_age,
             name=name,
             is_policy_accepted=is_policy_accepted,
             comment="Заявка принята"
@@ -232,25 +214,27 @@ def make_up():
         else:
             logger.error("❌ Фоновая запись в таблицу не удалась")
 
+    import asyncio
+
     @app.post("/request/")
+    @app.post("/request")
     async def post_request(
             request: Request,
             csrf_protect: CsrfProtect = Depends(),
             name: str = Form(...),
             email: str = Form(...),
             tel: str = Form(...),
-            course: str = Form(...),
+            child_age: str = Form(...),
             is_policy_accepted: str = Form(...)
     ):
         await csrf_protect.validate_csrf(request)
 
-        # Создаем модель из полученных данных
         try:
             request_data = ApplicationRequest(
                 name=name,
                 email=email,
                 tel=tel,
-                course=course,
+                child_age=child_age,
                 is_policy_accepted=is_policy_accepted
             )
         except ValueError as e:
@@ -258,22 +242,23 @@ def make_up():
 
         logger.info(f"✅ Валидная заявка от {request_data.name}")
 
-        message = f"{request_data.name} [{request_data.course}]\n📞 {request_data.tel} ✉ {request_data.email}"
-        """
-        asyncio.create_task(send_email_background(message))
-        asyncio.create_task(insert_row_background(
+        message = f"{request_data.name} [Возраст: {request_data.child_age}]\n📞 {request_data.tel} ✉ {request_data.email}"
+
+        asyncio.create_task(asyncio.to_thread(send_email_background, message))
+        asyncio.create_task(asyncio.to_thread(
+            insert_row_background,
             email=request_data.email,
             tel=request_data.tel,
-            course=request_data.course,
+            child_age=request_data.child_age,
             name=request_data.name,
             is_policy_accepted=request_data.is_policy_accepted
-        ))"""
+        ))
         asyncio.create_task(send_lead_to_crm(
             name=request_data.name,
             phone=request_data.tel,
             email=request_data.email,
-            course=request_data.course,
-            source_url=request.headers.get("referer", "")
+            child_age=request_data.child_age,
+            source_url=request.headers.get("referer", "") or ""
         ))
 
         return {
