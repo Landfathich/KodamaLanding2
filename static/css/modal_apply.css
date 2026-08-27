@@ -1,0 +1,225 @@
+.modal-apply-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-apply-overlay.show {
+    display: flex;
+}
+
+.modal-apply-window {
+    display: flex;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-apply-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 2;
+    transition: 0.2s;
+}
+
+.modal-apply-close:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: rotate(90deg);
+}
+
+.modal-apply-left {
+    flex: 1;
+    overflow: hidden;
+}
+
+.modal-apply-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-apply-right {
+    flex: 1;
+    padding: 40px 35px;
+}
+
+.modal-apply-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.modal-apply-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.modal-apply-header p {
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+}
+
+.modal-apply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-apply-form input[type="text"],
+.modal-apply-form input[type="tel"],
+.modal-apply-form input[type="email"],
+.modal-apply-select {
+    padding: 13px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+}
+
+.modal-apply-form input::placeholder {
+    color: #999;
+}
+
+.modal-apply-form input:focus,
+.modal-apply-select:focus {
+    outline: none;
+    border-color: #E769E4;
+    box-shadow: 0 0 0 3px rgba(231, 105, 228, 0.1);
+}
+
+.modal-apply-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+}
+
+.modal-apply-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.modal-apply-checkbox input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+.modal-apply-checkbox input[type="checkbox"]:checked {
+    border-color: #E769E4;
+}
+
+.modal-apply-checkbox input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 5px;
+    height: 10px;
+    border: solid #E769E4;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -60%) rotate(45deg);
+}
+
+.modal-apply-checkbox a {
+    color: #E769E4;
+    text-decoration: underline;
+}
+
+.modal-apply-checkbox a:hover {
+    color: #400D69;
+}
+
+.modal-apply-note {
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.modal-apply-note a {
+    color: #E769E4;
+    text-decoration: underline;
+    transition: 0.2s;
+}
+
+.modal-apply-note a:hover {
+    color: #400D69;
+}
+
+.modal-apply-note a {
+    color: #E769E4;
+}
+
+.modal-apply-submit {
+    background: linear-gradient(135deg, #E769E4, #400D69);
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-apply-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 105, 228, 0.4);
+}
+
+@media (max-width: 768px) {
+    .modal-apply-left {
+        display: none;
+    }
+
+    .modal-apply-right {
+        padding: 30px 20px;
+    }
+
+    .modal-apply-window {
+        width: 95%;
+    }
+}

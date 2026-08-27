@@ -1,0 +1,44 @@
+<div id="modal-apply-overlay" class="modal-apply-overlay">
+    <div class="modal-apply-window">
+        <button class="modal-apply-close" id="modal-apply-close">✕</button>
+
+        <div class="modal-apply-left">
+            <img src="{{ url_for('static', path='/images/hero_side.jpg') }}" alt="Ребёнок за компьютером">
+        </div>
+
+        <div class="modal-apply-right">
+            <div class="modal-apply-header">
+                <h2>Записаться на урок</h2>
+                <p>И начните обучение вашего ребёнка бесплатно!</p>
+            </div>
+
+            <form id="modal-apply-form" class="modal-apply-form" method="post">
+                <input type="text" name="parent_name" placeholder="Имя родителя" autocomplete="name" minlength="2"
+                       maxlength="50" required>
+                <input type="tel" name="phone" placeholder="+7 (000) 000-00-00" autocomplete="tel" minlength="5"
+                       maxlength="30" required>
+                <input type="email" name="email" placeholder="Почта родителя" autocomplete="email" required>
+
+                <select name="child_age" class="modal-apply-select" required>
+                    <option value="" disabled selected>Возраст ребёнка</option>
+                    <option value="7-9">7-9 лет</option>
+                    <option value="10-12">10-12 лет</option>
+                    <option value="13-15">13-15 лет</option>
+                    <option value="16-17">16-17 лет</option>
+                </select>
+
+                <label class="modal-apply-checkbox">
+                    <input type="checkbox" name="agree_personal" required>
+                    <span>Соглашаюсь на обработку <a href="/privacy" target="_blank">персональных данных</a></span>
+                </label>
+
+                <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+
+                <button type="submit" class="modal-apply-submit">Записаться</button>
+
+                <p class="modal-apply-note">Нажимая кнопку, вы принимаете <a href="/offer" target="_blank">условия
+                    оферты</a></p>
+            </form>
+        </div>
+    </div>
+</div>

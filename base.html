@@ -88,7 +88,7 @@
 
     {% include "templates/start_section.html" %}
 
-    <div id="ground"></div>
+    {#<div id="ground"></div>
 
     {% include "templates/mobile_menu.html" %}
 
@@ -100,25 +100,27 @@
 
     {% include "templates/courses_section.html" %}
 
-    {% include "templates/questions_section.html" %}
+    {% include "templates/questions_section.html" %}#}
 
-    {% include "templates/submit_app_section.html" %}
+    {#{% include "templates/submit_app_section.html" %}#}
 
 </div>
+{#
+{% include "templates/footer.html" %}#}
 
-{% include "templates/footer.html" %}
+{% include "templates/modal_apply.html" %}
 
 <script>
     const images = "{{ url_for('static', path='/images') }}";
 </script>
 <script src="{{ url_for('static', path='js/hero_form.js') }}" defer></script>
-<script src="{{ url_for('static', path='js/main.js') }}" defer></script>
+{#<script src="{{ url_for('static', path='js/main.js') }}" defer></script>
 <script src="{{ url_for('static', path='js/desktop.js') }}" defer></script>
 <script src="{{ url_for('static', path='js/about.js') }}" defer></script>
 <script src="{{ url_for('static', path='js/courses.js') }}" defer></script>
 <script src="{{ url_for('static', path='js/mobile_menu.js') }}" defer></script>
 <script src="{{ url_for('static', path='js/submit_app.js') }}" defer></script>
-<script src="{{ url_for('static', path='js/faq.js') }}" defer></script>
+<script src="{{ url_for('static', path='js/faq.js') }}" defer></script>#}
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",

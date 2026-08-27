@@ -1,11 +1,12 @@
-@import url(https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap);
+/*@import url(https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap);*/
+@import url(modal_apply.css);
 @import url(menu.css);
 @import url(start.css);
-@import url(about.css);
+/*@import url(about.css);
 @import url(courses.css);
 @import url(faq.css);
 @import url(submit-app.css);
-@import url(footer.css);
+@import url(footer.css);*/
 @import url(adaptive.css);
 
 @font-face {
