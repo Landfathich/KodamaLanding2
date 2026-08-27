@@ -5,12 +5,297 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Спасибо за заявку - Kodama School</title>
     <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .thank-you-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .thank-you-icon {
+            font-size: 64px;
+            margin-bottom: 30px;
+            animation: bounce 1s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .thank-you-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #E769E4, #400D69);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .thank-you-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        .thank-you-contact {
+            background: #f8f0ff;
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .thank-you-contact-icon {
+            font-size: 32px;
+        }
+
+        .thank-you-contact-text {
+            text-align: left;
+        }
+
+        .thank-you-contact-text strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .thank-you-contact-text p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .thank-you-courses {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        .thank-you-courses-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+.courses-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.course-card {
+    flex: 1 1 200px;
+    min-width: 200px;
+    max-width: calc(50% - 10px);
+    background: #fafafa;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .course-card {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+}
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .course-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .course-tag {
+            padding: 4px 8px;
+            background: #f0f0f0;
+            border-radius: 6px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .course-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .course-link {
+            color: #E769E4;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .course-link:hover {
+            color: #400D69;
+        }
+
+        .thank-you-telegram {
+            background: linear-gradient(135deg, #E769E4, #400D69);
+            border-radius: 16px;
+            padding: 30px;
+            color: white;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .thank-you-telegram-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .thank-you-telegram-text {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .telegram-btn {
+            display: inline-block;
+            background: white;
+            color: #400D69;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .telegram-btn:hover {
+            background: rgb(164, 255, 222);
+            transform: translateY(-2px);
+        }
+
+        .back-home {
+            display: inline-block;
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .back-home:hover {
+            color: #E769E4;
+        }
+
+        @media (max-width: 768px) {
+            .thank-you-title {
+                font-size: 32px;
+            }
+            .thank-you-contact {
+                flex-direction: column;
+                text-align: center;
+            }
+            .thank-you-contact-text {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="thank-you-container">
-        <h1>Спасибо за заявку!</h1>
-        <p>Мы свяжемся с вами в ближайшее время.</p>
-        <a href="/">Вернуться на главную</a>
+        <div class="thank-you-icon">🎉</div>
+
+        <h1 class="thank-you-title">Спасибо, заявка отправлена!</h1>
+        <p class="thank-you-subtitle">Менеджер свяжется с вами в течение дня.<br>А пока можете ознакомиться с нашими программами:</p>
+
+        <div class="thank-you-contact">
+            <div class="thank-you-contact-icon">📞</div>
+            <div class="thank-you-contact-text">
+                <strong>+7 (985) 260-33-74</strong>
+                <p>Позвоним с этого номера</p>
+            </div>
+        </div>
+
+        <div class="thank-you-courses">
+            <h2 class="thank-you-courses-title">Популярные курсы</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-tags">
+                        <span class="course-tag">7-9 лет</span>
+                        <span class="course-tag">онлайн</span>
+                    </div>
+                    <div class="course-name">Scratch — создание игр</div>
+                    <a href="/#courses" class="course-link">Программа курса →</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-tags">
+                        <span class="course-tag">8-12 лет</span>
+                        <span class="course-tag">онлайн</span>
+                    </div>
+                    <div class="course-name">Roblox Studio — 3D игры</div>
+                    <a href="/#courses" class="course-link">Программа курса →</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-tags">
+                        <span class="course-tag">10-16 лет</span>
+                        <span class="course-tag">онлайн</span>
+                    </div>
+                    <div class="course-name">Python — программирование</div>
+                    <a href="/#courses" class="course-link">Программа курса →</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-tags">
+                        <span class="course-tag">9-15 лет</span>
+                        <span class="course-tag">онлайн</span>
+                    </div>
+                    <div class="course-name">Figma — графический дизайн</div>
+                    <a href="/#courses" class="course-link">Программа курса →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="thank-you-telegram">
+            <div class="thank-you-telegram-title">Подпишитесь на нас в Telegram!</div>
+            <p class="thank-you-telegram-text">Обучающие материалы, советы от экспертов, новости школы и специальные предложения</p>
+            <a href="https://t.me/kodama_school" class="telegram-btn">Подписаться</a>
+        </div>
+
+        <a href="/" class="back-home">← Вернуться на главную</a>
     </div>
 </body>
 </html>
