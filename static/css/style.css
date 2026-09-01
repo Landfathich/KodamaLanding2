@@ -3,6 +3,7 @@
 @import url(menu.css);
 @import url(start.css);
 @import url(problem_solution.css);
+@import url(directions.css);
 /*@import url(about.css);
 @import url(courses.css);
 @import url(faq.css);
@@ -18,6 +19,8 @@
 
 :root {
     --container-width: 100%;
+    --header-height: 4vh;
+    --section-margin: calc(var(--header-height) + 30px);
 }
 
 * {

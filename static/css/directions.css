@@ -1,0 +1,422 @@
+.directions {
+    padding: 80px 40px;
+    margin-top: var(--section-margin);
+    margin-bottom: 30px;
+    background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255, 255, 255, 0.06) 20px, rgba(255, 255, 255, 0.06) 21px),
+    repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255, 255, 255, 0.06) 20px, rgba(255, 255, 255, 0.06) 21px),
+    radial-gradient(circle at 20% 80%, rgba(164, 255, 222, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(231, 105, 228, 0.15) 0%, transparent 50%),
+    linear-gradient(135deg, #400D69 0%, #5a1179 50%, #400D69 100%);
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.zigzag-3 {
+    position: absolute;
+    top: 9%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: repeating-linear-gradient(45deg,
+    rgba(255, 255, 255, 0.2) 0px,
+    rgba(255, 255, 255, 0.2) 5px,
+    transparent 5px,
+    transparent 15px
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.directions::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(231, 105, 228, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: pulse 4s ease-in-out infinite;
+    z-index: 0;
+}
+
+.directions::after {
+    content: '';
+    position: absolute;
+    bottom: -120px;
+    left: -120px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(164, 255, 222, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: pulse 5s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Декоративные фигуры */
+.shape-1, .shape-2, .shape-3, .shape-4, .shape-5, .shape-6, .shape-7, .shape-8,
+.line-1, .line-2 {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Фигуры — заменяем овалы на треугольники и знаки программирования */
+.shape-1 {
+    top: 8%;
+    left: 3%;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid rgba(164, 255, 222, 0.4);
+    background: none;
+    border-radius: 0;
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape-2 {
+    top: 12%;
+    right: 5%;
+    width: 25px;
+    height: 25px;
+    background: none;
+    border: 2px solid rgba(231, 105, 228, 0.5);
+    border-radius: 3px;
+    transform: rotate(45deg);
+    animation: float 7s ease-in-out infinite;
+}
+
+.shape-3 {
+    top: 5%;
+    left: 45%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid rgba(255, 255, 255, 0.3);
+    background: none;
+    border-radius: 0;
+    animation: float 5s ease-in-out infinite;
+}
+
+.shape-4 {
+    top: 10%;
+    right: 30%;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    animation: float 4s ease-in-out infinite;
+}
+
+.shape-5 {
+    top: 7%;
+    left: 70%;
+    width: 25px;
+    height: 25px;
+    background: none;
+    border: 2px solid rgba(231, 105, 228, 0.4);
+    border-radius: 4px;
+    transform: rotate(30deg);
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape-6 {
+    top: 15%;
+    left: 20%;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 20px solid rgba(164, 255, 222, 0.3);
+    background: none;
+    border-radius: 0;
+    animation: float 5.5s ease-in-out infinite;
+}
+
+.shape-7 {
+    top: 5%;
+    right: 50%;
+    width: 18px;
+    height: 18px;
+    background: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    transform: rotate(15deg);
+    animation: float 3.5s ease-in-out infinite;
+}
+
+.shape-8 {
+    top: 18%;
+    left: 85%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 18px solid rgba(164, 255, 222, 0.35);
+    background: none;
+    border-radius: 0;
+    animation: float 4.5s ease-in-out infinite;
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(10deg);
+    }
+}
+
+/* Плавающие эмодзи */
+.floating-emoji {
+    position: absolute;
+    font-size: 30px;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatEmoji 6s ease-in-out infinite;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Эмодзи — более хаотичное расположение */
+.emoji-1 {
+    top: 15%;
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.emoji-2 {
+    top: 25%;
+    right: 12%;
+    animation-delay: 0.7s;
+}
+
+.emoji-3 {
+    bottom: 20%;
+    left: 15%;
+    animation-delay: 1.4s;
+}
+
+.emoji-4 {
+    bottom: 10%;
+    right: 25%;
+    animation-delay: 2.1s;
+}
+
+@keyframes floatEmoji {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+/* Контент */
+.dir-container {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+.dir-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.dir-subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.4;
+}
+
+.dir-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.dir-card {
+    flex: 1 1 220px;
+    min-width: 220px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.dir-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.dir-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--accent);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.dir-card:hover::after {
+    opacity: 1;
+}
+
+.dir-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.dir-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.3s;
+}
+
+.dir-card:hover .dir-img img {
+    transform: scale(1.05);
+}
+
+.dir-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.dir-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.dir-content p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.dir-courses {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.dir-courses li {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    padding-left: 16px;
+    position: relative;
+}
+
+.dir-courses li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.dir-btn {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+    margin-top: auto;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.dir-btn:hover {
+    transform: translateX(3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1024px) {
+    .dir-card {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .directions {
+        padding: 60px 20px;
+        margin: 40px 0;
+        border-radius: 20px;
+        min-height: auto;
+    }
+
+    .dir-card {
+        flex: 1 1 100%;
+    }
+
+    .dir-title {
+        font-size: 24px;
+    }
+
+    .dir-img {
+        height: 160px;
+    }
+
+    .floating-emoji {
+        display: none;
+    }
+}
