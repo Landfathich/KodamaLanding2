@@ -135,3 +135,18 @@ modalOverlay.addEventListener('click', function (e) {
         modalOverlay.classList.remove('show');
     }
 });
+
+document.querySelectorAll('.pc-cta').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const course = this.dataset.course;
+        const modalOverlay = document.getElementById('modal-apply-overlay');
+
+        // Можно добавить скрытое поле с названием курса в модалку
+        const courseInput = document.getElementById('modal-course-input');
+        if (courseInput) {
+            courseInput.value = course;
+        }
+
+        modalOverlay.classList.add('show');
+    });
+});
