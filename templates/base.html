@@ -6,7 +6,7 @@
 
     {% block head %}{% endblock %}
 
-    <title>{% block title %}Kodama School{% endblock %}</title>
+    <title>{% block title %}Школа программирования Kodama{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ url_for('static', path='/css/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/menu.css') }}">
@@ -24,9 +24,6 @@
 
 {% include "includes/modal_apply.html" %}
 
-<script>
-    const images = "{{ url_for('static', path='/images') }}";
-</script>
 <script src="{{ url_for('static', path='js/hero_form.js') }}" defer></script>
 <script src="{{ url_for('static', path='js/desktop.js') }}" defer></script>
 

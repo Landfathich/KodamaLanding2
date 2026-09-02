@@ -46,6 +46,10 @@
     </noscript>
     <!-- /Yandex.Metrika counter -->
 
+    <!-- Картинки первого экрана — критичные, загружаются сразу -->
+    <link rel="preload" as="image" href="{{ url_for('static', path='/images/hero.webp') }}">
+    <link rel="preload" as="image" href="{{ url_for('static', path='/images/hero_side.jpg') }}">
+
     <meta name="description"
           content="Бесплатный пробный урок! Индивидуальные онлайн-занятия для детей 7–16 лет по IT, дизайну и созданию игр. Scratch, Python, Roblox, Figma. Опытные преподаватели. Гибкое расписание.">
     <meta name="keywords"
