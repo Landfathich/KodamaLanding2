@@ -124,7 +124,7 @@ def make_up():
         # Генерация токенов
         csrf_token, signed_token = csrf_protect.generate_csrf_tokens()
         # Создание ответа с шаблоном
-        response = root.TemplateResponse("base.html", {"request": request, "csrf_token": csrf_token})
+        response = root.TemplateResponse("index.html", {"request": request, "csrf_token": csrf_token})
         # Установка подписанного токена в cookie
         csrf_protect.set_csrf_cookie(signed_token, response)
         return response

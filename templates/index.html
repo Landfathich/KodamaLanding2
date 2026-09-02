@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Онлайн-курсы для детей по IT, дизайну и созданию игр | Kodama{% endblock %}
+
+{% block head %}
+    <link rel="canonical" href="https://kodamaclass.com/">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CH9RZDM1S4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-CH9RZDM1S4');
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=104045899', 'ym');
+
+        ym(104045899, 'init', {
+            ssr: true,
+            webvisor: true,
+            clickmap: true,
+            ecommerce: "dataLayer",
+            accurateTrackBounce: true,
+            trackLinks: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/104045899" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <meta name="description"
+          content="Бесплатный пробный урок! Индивидуальные онлайн-занятия для детей 7–16 лет по IT, дизайну и созданию игр. Scratch, Python, Roblox, Figma. Опытные преподаватели. Гибкое расписание.">
+    <meta name="keywords"
+          content="программирование для детей, онлайн уроки, Scratch, Python, Unity, Roblox Studio, Figma, Blender, Сайты, веб-разработка, курсы программирования">
+    <meta name="author" content="Kodama">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Онлайн-курсы для детей по IT, дизайну и созданию игр | Kodama">
+    <meta property="og:site_name" content="Kodama">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:description"
+          content="Бесплатный пробный урок! Индивидуальные онлайн-занятия для детей 7–16 лет по IT, дизайну и созданию игр. Scratch, Python, Roblox, Figma. Опытные преподаватели. Гибкое расписание.">
+    <meta property="og:image" content="https://kodamaclass.com/app/static/images/right_image_about.webp">
+    <meta property="og:url" content="https://kodamaclass.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Онлайн-курсы для детей по IT, дизайну и созданию игр | Kodama">
+    <meta name="twitter:description"
+          content="Бесплатный пробный урок! Индивидуальные онлайн-занятия для детей 7–16 лет по IT, дизайну и созданию игр. Scratch, Python, Roblox, Figma. Опытные преподаватели. Гибкое расписание.">
+    <meta name="twitter:image" content="https://kodamaclass.com/app/static/images/right_image_about.webp">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', path='/icons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', path='/icons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', path='/icons/favicon-16x16.png') }}">
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/start.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/problem_solution.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/directions.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/popular_courses.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/how_learning.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="page-wrapper">
+        {% include "includes/header.html" %}
+        {% include "includes/start_section.html" %}
+        {% include "includes/problem_solution_section.html" %}
+        {% include "includes/directions_section.html" %}
+        {% include "includes/popular_courses_section.html" %}
+        {% include "includes/how_learning_section.html" %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {% include "includes/seo/organization.html" %}
+    {% include "includes/seo/faq.html" %}
+    <script src="{{ url_for('static', path='js/problem_solution.js') }}" defer></script>
+    <script src="{{ url_for('static', path='js/directions.js') }}" defer></script>
+{% endblock %}
