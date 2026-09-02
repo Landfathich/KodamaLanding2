@@ -84,6 +84,7 @@
     <link rel="stylesheet" href="{{ url_for('static', path='/css/directions.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/popular_courses.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/how_learning.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/reviews.css') }}">
 {% endblock %}
 
 {% block content %}
@@ -94,6 +95,7 @@
         {% include "includes/directions_section.html" %}
         {% include "includes/popular_courses_section.html" %}
         {% include "includes/how_learning_section.html" %}
+        {% include "includes/reviews_section.html" %}
     </div>
 {% endblock %}
 
@@ -102,4 +104,5 @@
     {% include "includes/seo/faq.html" %}
     <script src="{{ url_for('static', path='js/problem_solution.js') }}" defer></script>
     <script src="{{ url_for('static', path='js/directions.js') }}" defer></script>
+    <script src="{{ url_for('static', path='js/reviews.js') }}" defer></script>
 {% endblock %}

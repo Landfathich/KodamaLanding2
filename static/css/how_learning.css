@@ -4,7 +4,7 @@
         linear-gradient(to right, rgba(166, 105, 231, 0.17) 0%, transparent 30%, transparent 70%, rgba(166, 105, 231, 0.17) 100%),
         #ffffff;
     width: 100%;
-    min-height: calc(100vh - 4vh - 80px);
+    min-height: calc(100vh - 4vh - 80px); /* возможно такое стоит добавить всем секциям стандартного размера на 1 экран */
     display: flex;
     align-items: center;
     margin-top: 40px;
