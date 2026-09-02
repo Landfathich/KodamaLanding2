@@ -136,6 +136,7 @@ modalOverlay.addEventListener('click', function (e) {
     }
 });
 
+// popular_courses section
 document.querySelectorAll('.pc-cta').forEach(btn => {
     btn.addEventListener('click', function() {
         const course = this.dataset.course;
@@ -150,3 +151,14 @@ document.querySelectorAll('.pc-cta').forEach(btn => {
         modalOverlay.classList.add('show');
     });
 });
+
+// how_learning section
+const hlCtaBtn = document.getElementById('hl-cta-btn');
+if (hlCtaBtn) {
+    hlCtaBtn.addEventListener('click', function() {
+        const modalOverlay = document.getElementById('modal-apply-overlay');
+        if (modalOverlay) {
+            modalOverlay.classList.add('show');
+        }
+    });
+}

@@ -47,7 +47,19 @@
     <!-- /Yandex.Metrika counter -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/base.css') }}">
+
+    <!-- Стили секций -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/menu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/start.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/problem_solution.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/directions.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/popular_courses.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/how_learning.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/modal_apply.css') }}">
+
     <title>Онлайн-курсы для детей по IT, дизайну и созданию игр | Kodama</title>
 
     <meta name="description"
@@ -84,37 +96,20 @@
 <body id="home">
 
 <div class="page-wrapper">
-    {% include "templates/header.html" %}
+    {% include "includes/header.html" %}
 
-    {% include "templates/start_section.html" %}
+    {% include "includes/start_section.html" %}
 
-    {% include "templates/problem_solution_section.html" %}
+    {% include "includes/problem_solution_section.html" %}
 
-    {% include "templates/directions_section.html" %}
+    {% include "includes/directions_section.html" %}
 
-    {% include "templates/popular_courses_section.html" %}
+    {% include "includes/popular_courses_section.html" %}
 
-    {#<div id="ground"></div>
-
-    {% include "templates/mobile_menu.html" %}
-
-    {% include "templates/about_section.html" %}
-
-    <div id="between-decor-purple">
-        <h3>Знания, приключения и веселье: выбери свой путь</h3>
-    </div>
-
-    {% include "templates/courses_section.html" %}
-
-    {% include "templates/questions_section.html" %}#}
-
-    {#{% include "templates/submit_app_section.html" %}#}
-
+    {% include "includes/how_learning_section.html" %}
 </div>
-{#
-{% include "templates/footer.html" %}#}
 
-{% include "templates/modal_apply.html" %}
+{% include "includes/modal_apply.html" %}
 
 <script>
     const images = "{{ url_for('static', path='/images') }}";
@@ -124,12 +119,6 @@
 <script src="{{ url_for('static', path='js/directions.js') }}" defer></script>
 
 <script src="{{ url_for('static', path='js/desktop.js') }}" defer></script>
-{#<script src="{{ url_for('static', path='js/main.js') }}" defer></script>
-<script src="{{ url_for('static', path='js/about.js') }}" defer></script>
-<script src="{{ url_for('static', path='js/courses.js') }}" defer></script>
-<script src="{{ url_for('static', path='js/mobile_menu.js') }}" defer></script>
-<script src="{{ url_for('static', path='js/submit_app.js') }}" defer></script>
-<script src="{{ url_for('static', path='js/faq.js') }}" defer></script>#}
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",

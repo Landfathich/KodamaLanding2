@@ -21,7 +21,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(level
 logger = logging.getLogger(__name__)
 
 ROOT_DIRECTORY = Path(__file__).resolve().parent.parent
-root = Jinja2Templates(ROOT_DIRECTORY)
+TEMPLATES_DIRECTORY = ROOT_DIRECTORY / "templates"
+root = Jinja2Templates(str(TEMPLATES_DIRECTORY))
 
 from pydantic import BaseModel, field_validator
 import re
@@ -130,15 +131,15 @@ def make_up():
 
     @app.get("/thank-you")
     async def thank_you(request: Request):
-        return root.TemplateResponse("templates/thank_you.html", {"request": request})
+        return root.TemplateResponse("thank_you.html", {"request": request})
 
     @app.get("/offer")
     async def offer_page(request: Request):
-        return root.TemplateResponse("templates/offer.html", {"request": request})
+        return root.TemplateResponse("offer.html", {"request": request})
 
     @app.get("/privacy")
     async def privacy_policy(request: Request):
-        return root.TemplateResponse("templates/privacy.html", {"request": request})
+        return root.TemplateResponse("privacy.html", {"request": request})
 
     # @app.get("/advertising")
     # async def privacy_policy(request: Request):
