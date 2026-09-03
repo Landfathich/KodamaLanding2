@@ -1,0 +1,246 @@
+.final-cta {
+    padding: 40px 0;
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgb(70, 255, 200) 0%, rgb(0, 220, 170) 50%, rgb(0, 180, 140) 100%);
+    border-radius: 30px;
+}
+
+.fc-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    min-height: 300px;
+}
+
+.fc-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fc-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.fc-subtitle {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    line-height: 1.5;
+    max-width: 500px;
+}
+
+.fc-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.fc-badge {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #400D69;
+}
+
+.fc-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.fc-btn-primary {
+    background: #400D69;
+    color: #fff;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fc-btn-primary:hover {
+    background: #5a1179;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(64, 13, 105, 0.3);
+}
+
+.fc-btn-secondary {
+    background: rgba(255, 255, 255, 0.7);
+    color: #400D69;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.fc-btn-secondary:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+.fc-right {
+    flex: 0 0 35%;
+    position: relative;
+    align-self: flex-end;
+    height: 100%;
+    min-height: 300px;
+}
+
+.fc-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+    position: absolute;
+    bottom: -60px;
+    right: -100px;
+    transform: rotate(-8deg);
+    animation: fcHeroFloat 4s ease-in-out infinite;
+}
+
+@keyframes fcHeroFloat {
+    0%, 100% {
+        transform: rotate(-8deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-8deg) translateY(-15px);
+    }
+}
+
+.fc-decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.fc-decor-1 {
+    top: 15%;
+    left: 3%;
+    width: 70px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    transform: rotate(-25deg);
+    animation: fcFloat 5s ease-in-out infinite;
+}
+
+.fc-decor-2 {
+    bottom: 20%;
+    left: 40%;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: fcFloat 6s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.fc-decor-3 {
+    top: 20%;
+    left: 55%;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.35);
+    animation: fcSpin 8s linear infinite;
+}
+
+.fc-decor-4 {
+    bottom: 15%;
+    left: 8%;
+    width: 40px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    transform: rotate(15deg);
+    animation: fcFloat 4s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.fc-decor-5 {
+    top: 45%;
+    left: 25%;
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 3px;
+    transform: rotate(45deg);
+    animation: fcFloat 5s ease-in-out infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes fcSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fcFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .fc-container {
+        flex-direction: column;
+        gap: 25px;
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .fc-title {
+        font-size: 24px;
+    }
+
+    .fc-right {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 200px;
+        min-height: auto;
+        align-self: auto;
+    }
+
+    .fc-right img {
+        width: 100%;
+        position: static;
+        transform: rotate(-5deg);
+        animation: none;
+    }
+
+    .fc-buttons {
+        flex-direction: column;
+    }
+
+    .fc-btn-primary,
+    .fc-btn-secondary {
+        text-align: center;
+    }
+}

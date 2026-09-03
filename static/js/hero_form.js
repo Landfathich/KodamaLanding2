@@ -162,3 +162,14 @@ if (hlCtaBtn) {
         }
     });
 }
+
+// final_cta section
+const fcCtaBtn = document.getElementById('fc-cta-btn');
+if (fcCtaBtn) {
+    fcCtaBtn.addEventListener('click', function() {
+        const modalOverlay = document.getElementById('modal-apply-overlay');
+        if (modalOverlay) {
+            modalOverlay.classList.add('show');
+        }
+    });
+}
