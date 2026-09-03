@@ -58,6 +58,11 @@ section[id] {
     .no-scroll {
         overflow: hidden;
     }
+
+    .page-wrapper {
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
 }
 
 /* Планшеты */
