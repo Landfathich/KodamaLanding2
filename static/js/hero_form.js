@@ -138,7 +138,7 @@ modalOverlay.addEventListener('click', function (e) {
 
 // popular_courses section
 document.querySelectorAll('.pc-cta').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
         const course = this.dataset.course;
         const modalOverlay = document.getElementById('modal-apply-overlay');
 
@@ -155,7 +155,7 @@ document.querySelectorAll('.pc-cta').forEach(btn => {
 // how_learning section
 const hlCtaBtn = document.getElementById('hl-cta-btn');
 if (hlCtaBtn) {
-    hlCtaBtn.addEventListener('click', function() {
+    hlCtaBtn.addEventListener('click', function () {
         const modalOverlay = document.getElementById('modal-apply-overlay');
         if (modalOverlay) {
             modalOverlay.classList.add('show');
@@ -166,7 +166,18 @@ if (hlCtaBtn) {
 // final_cta section
 const fcCtaBtn = document.getElementById('fc-cta-btn');
 if (fcCtaBtn) {
-    fcCtaBtn.addEventListener('click', function() {
+    fcCtaBtn.addEventListener('click', function () {
+        const modalOverlay = document.getElementById('modal-apply-overlay');
+        if (modalOverlay) {
+            modalOverlay.classList.add('show');
+        }
+    });
+}
+
+// footer section
+const footerCtaBtn = document.getElementById('footer-cta-btn');
+if (footerCtaBtn) {
+    footerCtaBtn.addEventListener('click', function () {
         const modalOverlay = document.getElementById('modal-apply-overlay');
         if (modalOverlay) {
             modalOverlay.classList.add('show');
