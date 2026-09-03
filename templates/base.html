@@ -24,6 +24,34 @@
 
 {% include "includes/modal_apply.html" %}
 
+<div id="mobile-menu-overlay"></div>
+<div id="mobile-menu">
+    <button id="close-menu-btn" title="Закрыть меню">✕</button>
+
+    <div class="mobile-menu-logo"></div>
+
+    <nav id="nav-mobile-menu">
+        <a href="#directions">Курсы</a>
+        <a href="#popular-courses">Популярные курсы</a>
+        <a href="#how-learning">Как проходит обучение</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="mobile-menu-bottom">
+        <a href="tel:+79852603374" class="mobile-phone">+7 (985) 260-33-74</a>
+        <div class="mobile-socials">
+            <a href="https://t.me/kodama_school" target="_blank" class="social-link telegram">
+                <i class="fab fa-telegram-plane"></i>
+            </a>
+            <a href="https://vk.com/kodama_school" target="_blank" class="social-link vk">
+                <i class="fab fa-vk"></i>
+            </a>
+        </div>
+        <button class="mobile-cta-btn" id="mobile-cta-btn">Записаться на урок</button>
+    </div>
+</div>
+
 <script src="{{ url_for('static', path='js/hero_form.js') }}" defer></script>
 <script src="{{ url_for('static', path='js/desktop.js') }}" defer></script>
 
