@@ -1,6 +1,7 @@
 const menuButtons = document.querySelectorAll('.menu-item');
 const header = document.querySelector('header');
 const logo = document.querySelector('.logo');
+const openMenuBtn = document.getElementById('open-menu-btn');
 
 menuButtons.forEach(button => button.classList.add('menu-button-no-scrolled'));
 
@@ -21,5 +22,13 @@ window.addEventListener('scroll', function () {
             button.classList.remove('menu-button-scrolled');
             button.classList.add('menu-button-no-scrolled');
         });
+    }
+});
+
+document.querySelector('.cta-button').addEventListener('click', function (e) {
+    e.preventDefault();
+    const modalOverlay = document.getElementById('modal-apply-overlay');
+    if (modalOverlay) {
+        modalOverlay.classList.add('show');
     }
 });

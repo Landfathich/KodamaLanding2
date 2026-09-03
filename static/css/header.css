@@ -40,15 +40,16 @@ header {
     white-space: nowrap;
 }
 
-.mobile-menu-icon {
-    width: 9vw;
-    margin-right: 1vw;
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 105, 228, 0.4);
 }
 
 #logo-link {
     display: block;
     height: 100%;
     width: 15vw;
+    max-width: 150px;
 }
 
 .logo {
@@ -61,12 +62,7 @@ header {
 }
 
 .logo-scrolled {
-    width: 100%;
-    height: 100%;
     background-image: url(../images/logo_scrolled.webp);
-    background-size: contain;
-    background-position: left;
-    background-repeat: no-repeat;
 }
 
 .header-scrolled {
@@ -76,20 +72,13 @@ header {
 
 .menu-item {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    color: #ffffff;
     transition: 0.3s;
-    opacity: 0.8;
 }
-
-.menu-item:hover {
-    color: #dddddd;
-}
-
 
 .menu-button-scrolled {
-    color: black;
+    color: #333;
 }
 
 .menu-button-scrolled:hover {
@@ -97,7 +86,7 @@ header {
 }
 
 .menu-button-no-scrolled {
-    color: white;
+    color: #fff;
 }
 
 .menu-button-no-scrolled:hover {
@@ -114,20 +103,11 @@ header {
     height: 100vh;
     z-index: 5;
     overflow: hidden;
-    background-image: url(../images/mobile_menu_bg.webp);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-position-y: bottom;
 }
 
 #close-menu-btn {
     position: absolute;
     background: none;
-    background-image: url(../images/close_mobile_menu_btn.webp);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
     border: none;
     padding: 0;
     cursor: pointer;
@@ -136,71 +116,72 @@ header {
     right: 20px;
     width: 30px;
     height: 30px;
+    font-size: 28px;
+    color: #400D69;
 }
 
 #nav-mobile-menu {
     display: flex;
     flex-direction: column;
+    gap: 5px;
+    padding: 80px 30px 30px;
 }
 
-.mobile-logo {
-    width: 85%;
-    margin: 0 auto;
-    height: 20%;
-    background-image: url(../images/logo_scrolled.webp);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+#nav-mobile-menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: 0.2s;
 }
 
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(231, 105, 228, 0.4);
+#nav-mobile-menu a:hover {
+    color: #E769E4;
+}
+
+.mobile-cta {
+    margin-top: 30px;
+    padding: 15px;
+    background: linear-gradient(135deg, #E769E4, #400D69);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
     header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        height: 7vh;
+        height: 60px;
         padding: 0 16px;
+        top: 10px;
     }
 
     .menu {
         display: none;
-        flex-direction: row;
-        align-items: center;
     }
 
-    .menu.open {
-        display: block;
-    }
-
-    .menu a {
-        margin: 5px 0;
+    .cta-button {
+        display: none;
     }
 
     #open-menu-btn {
-        width: 6vw;
-        height: 50%;
+        display: block;
+        width: 30px;
+        height: 30px;
         border: none;
         padding: 0;
         cursor: pointer;
         outline: none;
         background-color: transparent;
-        background-image: url(../images/open_mobile_menu_btn.webp);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
+        font-size: 24px;
+        color: #fff;
     }
 
-    #logo-link {
-        width: 29vw;
-    }
-
-    .cta-button {
-        display: none;
+    .header-scrolled #open-menu-btn {
+        color: #333;
     }
 }
