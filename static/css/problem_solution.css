@@ -146,8 +146,10 @@
 
 .ps-solution-badge {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
     margin-bottom: 15px;
     position: relative;
     z-index: 1;
@@ -158,12 +160,7 @@
     border-radius: 8px;
     padding: 5px 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.ps-logo {
-    height: 24px;
-    width: auto;
-    display: block;
+    flex-shrink: 0;
 }
 
 .ps-solution-badge span {
@@ -175,6 +172,13 @@
     background: rgba(255,255,255,0.3);
     padding: 4px 10px;
     border-radius: 20px;
+    white-space: nowrap;
+}
+
+.ps-logo {
+    height: 24px;
+    width: auto;
+    display: block;
 }
 
 .ps-solution-content {
@@ -292,6 +296,10 @@
 
     .ps-solution-content h3 {
         font-size: 18px;
+    }
+
+    .ps-arrow {
+        display: none;
     }
 }
 

@@ -138,27 +138,31 @@
 
 .hero-form-header {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
+    gap: 10px;
 }
 
 .hero-form-header h2 {
     font-size: 24px;
     font-weight: 700;
     color: #fff;
+    flex: 1;
+    min-width: 150px;
 }
 
 .hero-form-tags {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
 }
 
 .hero-form-tags span {
     padding: 4px 10px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255,255,255,0.15);
     border-radius: 12px;
     font-size: 12px;
     color: #fff;

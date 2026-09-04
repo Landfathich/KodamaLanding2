@@ -185,6 +185,26 @@
     box-shadow: 0 4px 15px rgba(164, 255, 222, 0.2);
 }
 
+.rv-avito-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.rv-avito-link {
+    color: #E769E4;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+    white-space: nowrap;
+    background: rgba(231, 105, 228, 0.1);
+    padding: 8px 14px;
+    border-radius: 20px;
+}
+
 .rv-avito-badge:hover {
     box-shadow: 0 6px 20px rgba(164, 255, 222, 0.35);
     border-color: rgb(130, 230, 200);
@@ -195,14 +215,6 @@
     height: 36px;
     object-fit: contain;
     flex-shrink: 0;
-}
-
-.rv-avito-text {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    flex: 1;
 }
 
 .rv-avito-text strong {
@@ -223,18 +235,6 @@
     font-size: 13px;
     color: #666;
     font-weight: 500;
-}
-
-.rv-avito-link {
-    color: #E769E4;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    transition: 0.2s;
-    white-space: nowrap;
-    background: rgba(231, 105, 228, 0.1);
-    padding: 8px 14px;
-    border-radius: 20px;
 }
 
 .rv-avito-link:hover {
@@ -468,5 +468,18 @@
 
     .rv-title {
         font-size: 24px;
+    }
+
+    .rv-container {
+        padding: 0;
+    }
+
+     .rv-avito-badge {
+        flex-wrap: wrap;
+    }
+
+    .rv-avito-link {
+        flex-basis: 100%;
+        text-align: center;
     }
 }

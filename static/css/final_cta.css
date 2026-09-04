@@ -232,7 +232,7 @@
         width: 100%;
         position: static;
         transform: rotate(-5deg);
-        animation: none;
+        animation: fcHeroFloat 4s ease-in-out infinite;
     }
 
     .fc-buttons {
