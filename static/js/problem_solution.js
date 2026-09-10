@@ -1,7 +1,6 @@
 const problemCards = document.querySelectorAll('.ps-problem-card');
 const solutionTitle = document.getElementById('ps-solution-title');
 const solutionPoints = document.getElementById('ps-solution-points');
-const solutionContent = document.querySelector('.ps-solution-content');
 
 const solutions = {
     1: {
@@ -14,19 +13,19 @@ const solutions = {
         ]
     },
     2: {
-        title: 'Направляем интерес в развитие',
+        title: 'Направляем любовь к играм в обучение',
         points: [
-            { icon: '🎮', text: 'Связываем игры с <strong>программированием и логикой</strong>' },
-            { icon: '🎨', text: 'Учим <strong>дизайну и творчеству</strong> через технологии' },
-            { icon: '🧠', text: 'Развиваем <strong>мышление и навыки</strong>, а не только развлечение' },
-            { icon: '📈', text: 'Показываем <strong>результат</strong> через проекты' }
+            { icon: '🎮', text: 'Игры становятся <strong>основой для программирования</strong>' },
+            { icon: '🎨', text: 'Развиваем <strong>творчество</strong> через дизайн и технологии' },
+            { icon: '🧠', text: 'Тренируем <strong>логику и мышление</strong>, а не только играем' },
+            { icon: '📈', text: 'Показываем <strong>результат</strong> через реальные проекты' }
         ]
     },
     3: {
         title: 'Помогаем выбрать направление',
         points: [
-            { icon: '🔍', text: 'На пробном уроке <strong>определяем интересы</strong> ребёнка' },
-            { icon: '📋', text: 'Подбираем курс по <strong>возрасту и уровню</strong>' },
+            { icon: '📞', text: 'Подбираем курс <strong>под интересы ребёнка</strong>' },
+            { icon: '📋', text: 'Учитываем <strong>возраст и уровень</strong>' },
             { icon: '💡', text: 'Даём <strong>рекомендации</strong> по развитию' },
             { icon: '🔄', text: 'Можно <strong>поменять направление</strong> в любой момент' }
         ]
@@ -35,7 +34,7 @@ const solutions = {
         title: 'Делаем первый шаг безопасным',
         points: [
             { icon: '🎁', text: 'Пробный урок — <strong>бесплатный</strong> и ни к чему не обязывает' },
-            { icon: '👩‍🏫', text: '<strong>Мягкий преподаватель</strong>, который поддержит ребёнка' },
+            { icon: '👩‍🏫', text: '<strong>Чуткий преподаватель</strong>, который поддержит ребёнка' },
             { icon: '⏱️', text: 'Комфортный <strong>индивидуальный темп</strong>' },
             { icon: '👨‍👩‍👧', text: 'Родитель <strong>видит результат</strong> после первого урока' }
         ]
@@ -44,14 +43,21 @@ const solutions = {
 
 problemCards.forEach(card => {
     card.addEventListener('click', function() {
+        if (this.classList.contains('active')) return;
+
         problemCards.forEach(c => c.classList.remove('active'));
         this.classList.add('active');
 
         const solutionId = this.dataset.solution;
         const solution = solutions[solutionId];
 
-        solutionContent.style.transition = 'opacity 0.1s ease';
-        solutionContent.style.opacity = '0';
+        solutionTitle.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+        solutionTitle.style.opacity = '0';
+        solutionTitle.style.transform = 'translateY(-5px)';
+
+        solutionPoints.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+        solutionPoints.style.opacity = '0';
+        solutionPoints.style.transform = 'translateY(-5px)';
 
         setTimeout(() => {
             solutionTitle.textContent = solution.title;
@@ -62,7 +68,13 @@ problemCards.forEach(card => {
                 </div>
             `).join('');
 
-            solutionContent.style.opacity = '1';
-        }, 100);
+            solutionTitle.style.opacity = '1';
+            solutionTitle.style.transform = 'translateY(0)';
+
+            setTimeout(() => {
+                solutionPoints.style.opacity = '1';
+                solutionPoints.style.transform = 'translateY(0)';
+            }, 50);
+        }, 200);
     });
 });

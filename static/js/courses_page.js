@@ -8,6 +8,7 @@ function filterCards() {
     cards.forEach(card => {
         const minAge = parseInt(card.dataset.ageMin);
         const maxAge = parseInt(card.dataset.ageMax);
+        const cardTypes = card.dataset.types.split(',');
 
         let matchesAge = true;
         if (activeAge !== 'all') {
@@ -15,7 +16,7 @@ function filterCards() {
             matchesAge = (minAge <= filterMax && maxAge >= filterMin);
         }
 
-        const matchesType = activeType === 'all' || card.dataset.type === activeType;
+        const matchesType = activeType === 'all' || cardTypes.includes(activeType);
 
         if (matchesType && matchesAge) {
             card.classList.remove('hidden');
@@ -23,6 +24,19 @@ function filterCards() {
             card.classList.add('hidden');
         }
     });
+}
+
+const urlParams = new URLSearchParams(window.location.search);
+const typeFromUrl = urlParams.get('type');
+
+if (typeFromUrl) {
+    const activeFilter = document.querySelector(`[data-type="${typeFromUrl}"]`);
+    if (activeFilter) {
+        typeFilters.forEach(f => f.classList.remove('active'));
+        activeFilter.classList.add('active');
+        activeType = typeFromUrl;
+        filterCards();
+    }
 }
 
 typeFilters.forEach(filter => {

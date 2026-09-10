@@ -187,28 +187,111 @@ footer.footer {
 }
 
 @media (max-width: 768px) {
+    footer.footer {
+        padding: 25px 0 0;
+        margin-top: 50px;
+    }
+
     .footer-container {
         flex-direction: column;
-        gap: 25px;
+        gap: 20px;
+        padding: 15px 16px;
         text-align: left;
-        padding: 20px 16px;
+    }
+
+    .footer-col {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .footer-col-brand {
+        flex: 1 1 auto;
     }
 
     .footer-logo {
-        margin: 0 0 12px;
+        width: 130px;
+        height: 40px;
+        margin: 0 0 10px;
         background-position: left;
     }
 
+    .footer-col-brand p {
+        font-size: 13px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+
+    .footer-col h3 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
     .footer-col h3:after {
-        margin: 8px 0 0;
+        width: 25px;
+        margin: 6px 0 0;
+    }
+
+    .footer-links {
+        gap: 8px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
+    }
+
+    .footer-contacts {
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .footer-contacts a {
+        font-size: 13px;
     }
 
     .footer-socials {
         justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .social-link {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
+
+    .footer-cta-btn {
+        padding: 11px 22px;
+        font-size: 13px;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+        padding: 15px 0;
     }
 
     .footer-bottom-container {
-        text-align: left;
         padding: 0 16px;
+        text-align: left;
+        gap: 5px;
+    }
+
+    .footer-bottom p,
+    .footer-docs a {
+        font-size: 12px;
+    }
+
+     .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 15px;
+        padding: 15px 16px;
+    }
+
+    .footer-col-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-col {
+        min-width: 0;
     }
 }
