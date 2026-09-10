@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block body_id %}courses-page{% endblock %}
+
+{% block title %}Все курсы программирования для детей | Kodama{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/courses_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/final_cta.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="courses-page">
+        <div class="cp-container">
+            <h1 class="cp-title">Все курсы</h1>
+            <p class="cp-subtitle">Выберите направление по возрасту и интересам ребёнка</p>
+
+            <div class="cp-filters">
+                <button class="cp-filter active" data-type="all">Все</button>
+                <button class="cp-filter" data-type="programming">Программирование</button>
+                <button class="cp-filter" data-type="games">Создание игр</button>
+                <button class="cp-filter" data-type="design">Дизайн и 3D</button>
+                <button class="cp-filter" data-type="web">Веб-разработка</button>
+            </div>
+
+            <div class="cp-filters cp-filters-age">
+                <button class="cp-filter active" data-age="all">Все возрасты</button>
+                <button class="cp-filter" data-age="7-9">7-9 лет</button>
+                <button class="cp-filter" data-age="10-12">10-12 лет</button>
+                <button class="cp-filter" data-age="13-17">13-17 лет</button>
+            </div>
+
+            <div class="cp-grid">
+                <div class="cp-card" data-age-min="7" data-age-max="9" data-type="games" data-course="scratch">
+                    <div class="cp-img">
+                        <img src="{{ url_for('static', path='/images/course_scratch1.webp') }}" alt="Scratch"
+                             loading="lazy">
+                    </div>
+                    <div class="cp-content">
+                        <h3>Создание 2D игр на Scratch</h3>
+                        <p class="cp-age">7-9 лет</p>
+                        <p class="cp-desc">Ребёнок создаст свою первую игру и мультфильм</p>
+                        <button class="cp-cta" data-course="Scratch">Записаться</button>
+                    </div>
+                </div>
+
+                <div class="cp-card" data-age-min="7" data-age-max="9" data-type="programming"
+                     data-course="computer-literacy">
+                    <div class="cp-img">
+                        <img src="{{ url_for('static', path='/images/course_comp_lit1.webp') }}" alt="Компьютер с нуля"
+                             loading="lazy">
+                    </div>
+                    <div class="cp-content">
+                        <h3>Компьютер с нуля</h3>
+                        <p class="cp-age">7-9 лет</p>
+                        <p class="cp-desc">Основы работы с компьютером, браузером и интернетом</p>
+                        <button class="cp-cta" data-course="Компьютер с нуля">Записаться</button>
+                    </div>
+                </div>
+
+                <div class="cp-card" data-age-min="9" data-age-max="12" data-type="games" data-course="roblox">
+                    <div class="cp-img">
+                        <img src="{{ url_for('static', path='/images/course_roblox2.webp') }}" alt="Roblox Studio"
+                             loading="lazy">
+                    </div>
+                    <div class="cp-content">
+                        <h3>Создание 3D игр в Roblox Studio</h3>
+                        <p class="cp-age">9-12 лет</p>
+                        <p class="cp-desc">Создаст свой 3D-мир и игру мечты</p>
+                        <button class="cp-cta" data-course="Roblox Studio">Записаться</button>
+                    </div>
+                </div>
+
+                <div class="cp-card" data-age-min="10" data-age-max="14" data-type="programming" data-course="python">
+                    <div class="cp-img">
+                        <img src="{{ url_for('static', path='/images/course_python2.webp') }}" alt="Python"
+                             loading="lazy">
+                    </div>
+                    <div class="cp-content">
+                        <h3>Python — основы программирования</h3>
+                        <p class="cp-age">10-14 лет</p>
+                        <p class="cp-desc">Научится писать код и решать задачи</p>
+                        <button class="cp-cta" data-course="Python">Записаться</button>
+                    </div>
+                </div>
+
+                <div class="cp-card" data-age-min="10" data-age-max="16" data-type="design" data-course="blender">
+                    <div class="cp-img">
+                        <img src="{{ url_for('static', path='/images/course_blender2.webp') }}" alt="Blender"
+                             loading="lazy">
+                    </div>
+                    <div class="cp-content">
+                        <h3>3D-моделирование в Blender</h3>
+                        <p class="cp-age">10-16 лет</p>
+                        <p class="cp-desc">Создаст 3D-модели и анимации</p>
+                        <button class="cp-cta" data-course="Blender">Записаться</button>
+                    </div>
+                </div>
+
+                <div class="cp-card" data-age-min="9" data-age-max="15" data-type="design" data-course="figma">
+                    <div class="cp-img">
+                        <img src="{{ url_for('static', path='/images/course_figma1.webp') }}" alt="Figma"
+                             loading="lazy">
+                    </div>
+                    <div class="cp-content">
+                        <h3>Дизайн в Figma</h3>
+                        <p class="cp-age">9-15 лет</p>
+                        <p class="cp-desc">Создаст дизайн сайтов и приложений</p>
+                        <button class="cp-cta" data-course="Figma">Записаться</button>
+                    </div>
+                </div>
+
+                <div class="cp-card" data-age-min="11" data-age-max="16" data-type="web" data-course="web">
+                    <div class="cp-img">
+                        <img src="{{ url_for('static', path='/images/course_web_dev1.webp') }}" alt="Веб-разработка"
+                             loading="lazy">
+                    </div>
+                    <div class="cp-content">
+                        <h3>Веб-разработка с нуля</h3>
+                        <p class="cp-age">11-16 лет</p>
+                        <p class="cp-desc">Создаст свой сайт и опубликует его</p>
+                        <button class="cp-cta" data-course="Веб-разработка">Записаться</button>
+                    </div>
+                </div>
+
+                <div class="cp-card" data-age-min="12" data-age-max="16" data-type="games" data-course="unity">
+                    <div class="cp-img">
+                        <img src="{{ url_for('static', path='/images/course_unity2.webp') }}" alt="Unity"
+                             loading="lazy">
+                    </div>
+                    <div class="cp-content">
+                        <h3>Создание игр на Unity</h3>
+                        <p class="cp-age">12-16 лет</p>
+                        <p class="cp-desc">Разработает 2D и 3D игры на C#</p>
+                        <button class="cp-cta" data-course="Unity">Записаться</button>
+                    </div>
+                </div>
+
+                <div class="cp-card" data-age-min="12" data-age-max="16" data-type="programming" data-course="olympic">
+                    <div class="cp-img">
+                        <img src="{{ url_for('static', path='/images/course_olympic1.webp') }}" alt="Олимпиады"
+                             loading="lazy">
+                    </div>
+                    <div class="cp-content">
+                        <h3>Олимпиады по программированию</h3>
+                        <p class="cp-age">12-16 лет</p>
+                        <p class="cp-desc">Подготовка к олимпиадам и решение сложных задач</p>
+                        <button class="cp-cta" data-course="Олимпиады">Записаться</button>
+                    </div>
+                </div>
+
+                <div class="cp-card" data-age-min="11" data-age-max="16" data-type="programming" data-course="cpp">
+                    <div class="cp-img">
+                        <img src="{{ url_for('static', path='/images/course_cpp2.webp') }}" alt="C++" loading="lazy">
+                    </div>
+                    <div class="cp-content">
+                        <h3>Изучение языка C++</h3>
+                        <p class="cp-age">11-16 лет</p>
+                        <p class="cp-desc">Освоит мощный язык для игр и системного программирования</p>
+                        <button class="cp-cta" data-course="C++">Записаться</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include "includes/final_cta_section.html" %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', path='js/courses_page.js') }}" defer></script>
+{% endblock %}

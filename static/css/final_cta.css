@@ -190,6 +190,10 @@
     animation-delay: 1.5s;
 }
 
+.courses-page .fc-btn-secondary {
+    display: none;
+}
+
 @keyframes fcSpin {
     0% {
         transform: rotate(0deg);

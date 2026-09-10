@@ -118,24 +118,35 @@ function handleFormSubmit(form, submitButtonSelector, buttonText) {
     });
 }
 
-handleFormSubmit(heroForm, '.hero-submit-btn', 'Записаться');
-handleFormSubmit(modalForm, '.modal-apply-submit', 'Записаться');
+if (heroForm) {
+    handleFormSubmit(heroForm, '.hero-submit-btn', 'Записаться');
+}
 
-ctaButton.addEventListener('click', function (e) {
-    e.preventDefault();
-    modalOverlay.classList.add('show');
-});
+if (modalForm) {
+    handleFormSubmit(modalForm, '.modal-apply-submit', 'Записаться');
+}
 
-modalClose.addEventListener('click', function () {
-    modalOverlay.classList.remove('show');
-});
 
-modalOverlay.addEventListener('click', function (e) {
-    if (e.target === modalOverlay) {
+if (ctaButton && modalOverlay) {
+    ctaButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        modalOverlay.classList.add('show');
+    });
+}
+
+if (modalClose && modalOverlay) {
+    modalClose.addEventListener('click', function () {
         modalOverlay.classList.remove('show');
-    }
-});
+    });
+}
 
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', function (e) {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('show');
+        }
+    });
+}
 // popular_courses section
 document.querySelectorAll('.pc-cta').forEach(btn => {
     btn.addEventListener('click', function () {

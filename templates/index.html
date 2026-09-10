@@ -87,23 +87,18 @@
     <link rel="stylesheet" href="{{ url_for('static', path='/css/reviews.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/faq.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/final_cta.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/footer.css') }}">
 {% endblock %}
 
 {% block content %}
-    <div class="page-wrapper">
-        {% include "includes/header.html" %}
-        {% include "includes/start_section.html" %}
-        {% include "includes/problem_solution_section.html" %}
-        {% include "includes/directions_section.html" %}
-        {% include "includes/popular_courses_section.html" %}
-        {% include "includes/how_learning_section.html" %}
-        {% include "includes/reviews_section.html" %}
-        {% include "includes/faq_section.html" %}
-        {% include "includes/final_cta_section.html" %}
-    </div>
-    {% include "includes/footer.html" %}
+    {% include "includes/start_section.html" %}
+    {% include "includes/problem_solution_section.html" %}
+    {% include "includes/directions_section.html" %}
+    {% include "includes/popular_courses_section.html" %}
+    {% include "includes/how_learning_section.html" %}
+    {% include "includes/reviews_section.html" %}
+    {% include "includes/faq_section.html" %}
+    {% include "includes/final_cta_section.html" %}
 {% endblock %}
 
 {% block scripts %}

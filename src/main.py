@@ -133,6 +133,10 @@ def make_up():
     async def thank_you(request: Request):
         return root.TemplateResponse("thank_you.html", {"request": request})
 
+    @app.get("/courses")
+    async def courses_page(request: Request):
+        return root.TemplateResponse("courses.html", {"request": request})
+
     @app.get("/offer")
     async def offer_page(request: Request):
         return root.TemplateResponse("offer.html", {"request": request})

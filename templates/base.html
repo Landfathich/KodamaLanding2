@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{ url_for('static', path='/css/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/modal_apply.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/footer.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     {% block styles %}{% endblock %}
 
@@ -20,7 +22,14 @@
 </head>
 <body id="{% block body_id %}home{% endblock %}">
 
-{% block content %}{% endblock %}
+{% include "includes/header.html" %}
+
+<div class="page-wrapper">
+    {% block content %}{% endblock %}
+</div>
+
+
+{% include "includes/footer.html" %}
 
 {% include "includes/modal_apply.html" %}
 
@@ -31,11 +40,11 @@
     <div class="mobile-menu-logo"></div>
 
     <nav id="nav-mobile-menu">
-        <a href="#directions">Курсы</a>
-        <a href="#popular-courses">Популярные курсы</a>
-        <a href="#how-learning">Как проходит обучение</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#faq">FAQ</a>
+        <a href="/#directions">Курсы</a>
+        <a href="/#popular-courses">Популярные курсы</a>
+        <a href="/#how-learning">Как проходит обучение</a>
+        <a href="/#reviews">Отзывы</a>
+        <a href="/#faq">FAQ</a>
     </nav>
 
     <div class="mobile-menu-bottom">
