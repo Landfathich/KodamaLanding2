@@ -1,0 +1,406 @@
+.thank-you-page {
+    padding: 110px 0 60px;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(231, 105, 228, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(164, 255, 222, 0.1) 0%, transparent 40%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23400D69' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.ty-decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    animation: tyFloat 5s ease-in-out infinite;
+}
+
+.ty-decor-1 {
+    top: 15%;
+    left: 8%;
+    font-size: 28px;
+    opacity: 0.2;
+}
+
+.ty-decor-2 {
+    top: 25%;
+    right: 12%;
+    font-size: 24px;
+    opacity: 0.18;
+    animation-delay: 1s;
+}
+
+.ty-decor-3 {
+    top: 50%;
+    left: 5%;
+    font-size: 22px;
+    opacity: 0.15;
+    animation-delay: 2s;
+}
+
+.ty-decor-4 {
+    bottom: 25%;
+    right: 8%;
+    font-size: 26px;
+    opacity: 0.2;
+    animation-delay: 1.5s;
+}
+
+.ty-decor-5 {
+    bottom: 10%;
+    left: 12%;
+    font-size: 20px;
+    opacity: 0.15;
+    animation-delay: 0.5s;
+}
+
+@keyframes tyFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+.ty-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.ty-hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.ty-hero-left {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ty-hero-right {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.ty-hero-right img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ty-icon {
+    font-size: 64px;
+    margin-bottom: 25px;
+    animation: tyBounce 1.2s ease;
+}
+
+@keyframes tyBounce {
+    0% { transform: translateY(0) scale(0.5); opacity: 0; }
+    50% { transform: translateY(-25px) scale(1.1); opacity: 1; }
+    100% { transform: translateY(0) scale(1); }
+}
+
+.ty-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #E769E4, #400D69);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.ty-subtitle {
+    font-size: 17px;
+    color: #666;
+    margin-bottom: 35px;
+    line-height: 1.5;
+    max-width: 500px;
+}
+
+.ty-contact {
+    background: #fafafa;
+    border: 1px solid rgb(164, 255, 222);
+    border-radius: 14px;
+    padding: 20px 28px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 4px 15px rgba(164, 255, 222, 0.2);
+}
+
+.ty-contact-icon {
+    font-size: 28px;
+}
+
+.ty-contact-text {
+    text-align: left;
+}
+
+.ty-contact-text strong {
+    display: block;
+    font-size: 17px;
+    color: #1a1a1a;
+    margin-bottom: 3px;
+}
+
+.ty-contact-text p {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+.ty-courses {
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+.ty-courses-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.ty-courses-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.ty-course-card {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 200px;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(231, 105, 228, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(164, 255, 222, 0.06) 0%, transparent 40%),
+        #fafafa;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.ty-course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-color: #E769E4;
+}
+
+.ty-course-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+}
+
+.ty-course-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ty-course-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.ty-course-tag {
+    padding: 3px 8px;
+    background: #f0f0f0;
+    border-radius: 6px;
+    font-size: 11px;
+    color: #666;
+}
+
+.ty-course-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    flex: 1;
+}
+
+.ty-course-link {
+    color: #E769E4;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.ty-course-card:hover .ty-course-link {
+    color: #400D69;
+}
+
+.ty-telegram {
+    background: linear-gradient(135deg, #E769E4, #400D69);
+    border-radius: 16px;
+    padding: 30px;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
+}
+
+.ty-telegram-content {
+    flex: 1;
+}
+
+.ty-telegram-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.ty-telegram-text {
+    font-size: 13px;
+    opacity: 0.9;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.ty-telegram-btn {
+    display: inline-block;
+    background: #fff;
+    color: #400D69;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.ty-telegram-btn:hover {
+    background: rgb(164, 255, 222);
+    transform: translateY(-2px);
+}
+
+.ty-back-home {
+    display: inline-block;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.ty-back-home:hover {
+    color: #E769E4;
+}
+
+.ty-faq {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.ty-faq .faq-title {
+    font-size: 22px;
+    text-align: center;
+}
+
+.ty-faq .faq {
+    padding: 0;
+    min-height: auto;
+    background: none;
+}
+
+@media (max-width: 768px) {
+    .thank-you-page {
+        padding: 90px 0 40px;
+    }
+
+    .ty-hero {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .ty-hero-left {
+        align-items: center;
+        text-align: center;
+    }
+
+    .ty-hero-right {
+        width: 100%;
+    }
+
+    .ty-title {
+        font-size: 28px;
+    }
+
+    .ty-subtitle {
+        font-size: 15px;
+    }
+
+    .ty-icon {
+        font-size: 50px;
+    }
+
+    .ty-contact {
+        flex-direction: column;
+        text-align: center;
+        padding: 18px 22px;
+    }
+
+    .ty-contact-text {
+        text-align: center;
+    }
+
+    .ty-decor {
+        font-size: 20px;
+    }
+
+    .ty-course-card {
+        flex: 1 1 100%;
+    }
+
+    .ty-telegram {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+
+    .ty-telegram-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
