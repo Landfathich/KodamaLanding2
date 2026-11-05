@@ -1,0 +1,26 @@
+<section class="direction-for">
+    <div class="dfor-decor dfor-decor-1"></div>
+    <div class="dfor-decor dfor-decor-2"></div>
+    <div class="dfor-decor dfor-decor-3">🎓</div>
+    <div class="dfor-decor dfor-decor-4">🚀</div>
+
+    <div class="dfor-container">
+        <h2 class="dfor-title">Кому подойдёт</h2>
+        <p class="dfor-subtitle">Направление для детей от 6 до 17 лет</p>
+
+        <div class="dfor-grid">
+            {% for item in for_whom %}
+            <div class="dfor-card">
+                <div class="dfor-card-bg"></div>
+                <div class="dfor-top">
+                    <div class="dfor-age-badge">{{ item.age }}</div>
+                    <div class="dfor-number">0{{ loop.index }}</div>
+                </div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.text }}</p>
+                <button class="dfor-cta" onclick="openModalApply()">Подобрать курс</button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

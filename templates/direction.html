@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block body_id %}direction-page{% endblock %}
+
+{% block title %}{{ title }} для детей — Kodama School{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/direction_hero.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/direction_learn.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/direction_path.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/direction_projects.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/direction_for.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/direction_faq.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/final_cta.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    {% include "includes/direction_hero.html" %}
+    {% include "includes/direction_learn.html" %}
+    {% include "includes/direction_path.html" %}
+    {% include "includes/direction_projects.html" %}
+    {% include "includes/direction_for.html" %}
+    {% include "includes/direction_faq.html" %}
+
+    {% include "includes/final_cta_section.html" %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        function openModalApply() {
+            const modalOverlay = document.getElementById('modal-apply-overlay');
+            if (modalOverlay) {
+                modalOverlay.classList.add('show');
+            }
+        }
+
+        function toggleFaq(item) {
+            const isOpen = item.classList.contains('active');
+
+            document.querySelectorAll('.dfaq-item').forEach(i => i.classList.remove('active'));
+
+            if (!isOpen) {
+                item.classList.add('active');
+            }
+        }
+
+        const dprTrack = document.getElementById('dpr-track');
+        if (dprTrack) {
+            const dprCards = dprTrack.querySelectorAll('.dpr-card');
+            const dprPrev = document.getElementById('dpr-prev');
+            const dprNext = document.getElementById('dpr-next');
+            let dprIndex = 0;
+
+            function getDprPerView() {
+                if (window.innerWidth <= 768) return 1;
+                return 2;
+            }
+
+            function updateDprCarousel() {
+                const perView = getDprPerView();
+                const cardWidth = dprCards[0].offsetWidth + 20;
+                dprTrack.style.transform = `translateX(-${dprIndex * cardWidth}px)`;
+                dprPrev.disabled = dprIndex === 0;
+                dprNext.disabled = dprIndex >= dprCards.length - perView;
+            }
+
+            dprPrev.addEventListener('click', () => {
+                if (dprIndex > 0) {
+                    dprIndex--;
+                    updateDprCarousel();
+                }
+            });
+
+            dprNext.addEventListener('click', () => {
+                if (dprIndex < dprCards.length - getDprPerView()) {
+                    dprIndex++;
+                    updateDprCarousel();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                dprIndex = 0;
+                updateDprCarousel();
+            });
+
+            updateDprCarousel();
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,29 @@
+<section class="direction-learn">
+    <div class="dl-decor dl-decor-1"></div>
+    <div class="dl-decor dl-decor-2"></div>
+    <div class="dl-decor dl-decor-3">📚</div>
+    <div class="dl-decor dl-decor-4">💡</div>
+
+    <div class="dl-container">
+        <h2 class="dl-title">Что изучает ребёнок</h2>
+        <p class="dl-subtitle">Программа направления — от первых шагов до серьёзных проектов</p>
+
+        <div class="dl-grid">
+            {% for item in learn %}
+            <div class="dl-card" style="--accent: {{ item.accent }};">
+                <div class="dl-card-header">
+                    <div class="dl-icon">{{ item.icon }}</div>
+                    <div class="dl-badge">Курс {{ loop.index }}</div>
+                </div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.text }}</p>
+                <ul class="dl-list">
+                    {% for point in item.points %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

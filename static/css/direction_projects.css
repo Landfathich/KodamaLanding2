@@ -1,0 +1,292 @@
+.direction-projects {
+    padding: 80px 40px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.dpr-decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    animation: dprFloat 5s ease-in-out infinite;
+}
+
+.dpr-decor-1 {
+    top: 15%;
+    right: 4%;
+    width: 45px;
+    height: 45px;
+    border: 2px solid rgba(231, 105, 228, 0.25);
+    border-radius: 50%;
+}
+
+.dpr-decor-2 {
+    bottom: 20%;
+    left: 3%;
+    width: 35px;
+    height: 35px;
+    background: rgba(164, 255, 222, 0.25);
+    border-radius: 10px;
+    transform: rotate(20deg);
+    animation-delay: 1s;
+}
+
+.dpr-decor-3 {
+    top: 20%;
+    left: 5%;
+    font-size: 24px;
+    opacity: 0.18;
+    animation-delay: 2s;
+}
+
+.dpr-decor-4 {
+    bottom: 12%;
+    right: 6%;
+    font-size: 22px;
+    opacity: 0.15;
+    animation-delay: 1.5s;
+}
+
+@keyframes dprFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+}
+
+.dpr-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+.dpr-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.dpr-subtitle {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.dpr-carousel {
+    position: relative;
+    overflow: visible;
+    padding: 0 10px;
+}
+
+.dpr-track-wrapper {
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+.dpr-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
+}
+
+.dpr-card {
+    flex: 0 0 calc(50% - 10px);
+    min-width: 0;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(231, 105, 228, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 20% 80%, rgba(164, 255, 222, 0.1) 0%, transparent 45%),
+        #fafafa;
+    border: 1px solid #f0f0f0;
+    border-radius: 18px;
+    padding: 30px 25px 25px;
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.dpr-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 20px,
+        rgba(64, 13, 105, 0.02) 20px,
+        rgba(64, 13, 105, 0.02) 21px
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.dpr-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #E769E4, #400D69);
+    transition: 0.4s;
+    border-radius: 0 0 4px 4px;
+}
+
+.dpr-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-color: #E769E4;
+}
+
+.dpr-card:hover::after {
+    width: 80%;
+}
+
+.dpr-icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.dpr-card:hover .dpr-icon {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.dpr-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.dpr-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.dpr-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(231, 105, 228, 0.1);
+    color: #400D69;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.dpr-card:hover .dpr-tag {
+    background: linear-gradient(135deg, #E769E4, #400D69);
+    color: #fff;
+}
+
+.dpr-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    backdrop-filter: blur(5px);
+    color: #400D69;
+}
+
+.dpr-arrow:hover {
+    background: #400D69;
+    color: #fff;
+    border-color: #400D69;
+}
+
+.dpr-arrow-left {
+    left: -15px;
+}
+
+.dpr-arrow-right {
+    right: -15px;
+}
+
+.dpr-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+    .dpr-card {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .direction-projects {
+        padding: 50px 16px;
+    }
+
+    .dpr-title {
+        font-size: 24px;
+    }
+
+    .dpr-subtitle {
+        margin-bottom: 30px;
+    }
+
+    .dpr-card {
+        flex: 0 0 100%;
+        padding: 25px 20px;
+    }
+
+    .dpr-icon {
+        font-size: 40px;
+    }
+
+    .dpr-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .dpr-arrow-left {
+        left: -5px;
+    }
+
+    .dpr-arrow-right {
+        right: -5px;
+    }
+}

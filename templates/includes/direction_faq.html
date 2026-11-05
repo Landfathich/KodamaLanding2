@@ -1,0 +1,29 @@
+<section class="direction-faq">
+    <div class="dfaq-decor dfaq-decor-1"></div>
+    <div class="dfaq-decor dfaq-decor-2">❓</div>
+    <div class="dfaq-decor dfaq-decor-3"></div>
+    <div class="dfaq-decor dfaq-decor-4">💬</div>
+
+    <div class="dfaq-container">
+        <h2 class="dfaq-title">Частые вопросы</h2>
+        <p class="dfaq-subtitle">Собрали то, что чаще всего спрашивают родители</p>
+
+        <div class="dfaq-list">
+            {% for q in faq %}
+            <div class="dfaq-item" onclick="toggleFaq(this)">
+                <div class="dfaq-question">
+                    <span class="dfaq-icon">?</span>
+                    <span>{{ q.question }}</span>
+                    <span class="dfaq-toggle">+</span>
+                </div>
+                <div class="dfaq-answer">{{ q.answer }}</div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="dfaq-note">
+            <span>💬</span>
+            <p>Не нашли ответ? <a href="tel:+79852603374">Позвоните нам</a> или запишитесь на бесплатный урок — всё расскажем.</p>
+        </div>
+    </div>
+</section>

@@ -15,7 +15,7 @@
     left: 0;
     width: 50%;
     height: 100%;
-    background-image: url('../images/problem_photo.jpg');
+    background-image: url('../images/problem_photo.webp');
     background-size: cover;
     background-position: center;
     opacity: 0.15;
@@ -299,7 +299,7 @@
     left: 0;
     width: 50%;
     height: 100%;
-    background-image: url('../images/problem_photo.jpg');
+    background-image: url('../images/problem_photo.webp');
     background-size: cover;
     background-position: center;
     opacity: 0.3;

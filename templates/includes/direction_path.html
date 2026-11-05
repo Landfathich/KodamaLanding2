@@ -1,0 +1,33 @@
+<section class="direction-path">
+    <div class="dp-decor dp-decor-1"></div>
+    <div class="dp-decor dp-decor-2">🎯</div>
+    <div class="dp-decor dp-decor-3">⭐</div>
+    <div class="dp-decor dp-decor-4"></div>
+
+    <div class="dp-container">
+        <div class="dp-left">
+            <h2 class="dp-title">Путь ученика</h2>
+            <p class="dp-subtitle">От знакомства до собственных проектов</p>
+
+            <div class="dp-steps">
+                {% for step in path %}
+                <div class="dp-step" style="--accent: {{ step.accent }};">
+                    <div class="dp-step-number">{{ loop.index }}</div>
+                    <div class="dp-step-content">
+                        <h3>{{ step.title }}</h3>
+                        <p>{{ step.text }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="dp-right">
+            <img src="{{ url_for('static', path='/images/hero.webp') }}" alt="Ребёнок учится программировать" loading="lazy">
+            <div class="dp-image-badge">
+                <span>⭐</span>
+                <span>Реальный прогресс с первого урока</span>
+            </div>
+        </div>
+    </div>
+</section>

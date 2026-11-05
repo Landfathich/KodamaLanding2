@@ -48,7 +48,7 @@
 
     <!-- Картинки первого экрана — критичные, загружаются сразу -->
     <link rel="preload" as="image" href="{{ url_for('static', path='/images/hero.webp') }}">
-    <link rel="preload" as="image" href="{{ url_for('static', path='/images/hero_side.jpg') }}">
+    <link rel="preload" as="image" href="{{ url_for('static', path='/images/hero_side.webp') }}">
 
     <meta name="description"
           content="Бесплатный пробный урок! Индивидуальные онлайн-занятия для детей 7–16 лет по IT, дизайну и созданию игр. Scratch, Python, Roblox, Figma. Опытные преподаватели. Гибкое расписание.">
@@ -74,7 +74,6 @@
     <meta name="twitter:image" content="https://kodamaclass.com/app/static/images/right_image_about.webp">
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', path='/icons/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', path='/icons/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', path='/icons/favicon-16x16.png') }}">
 {% endblock %}
 

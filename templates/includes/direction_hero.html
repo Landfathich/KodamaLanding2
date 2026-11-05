@@ -1,0 +1,52 @@
+<section class="direction-hero">
+    <div class="dh-decor dh-decor-1"></div>
+    <div class="dh-decor dh-decor-2"></div>
+    <div class="dh-decor dh-decor-3">💻</div>
+    <div class="dh-decor dh-decor-4">⚡</div>
+    <div class="dh-decor dh-decor-5"></div>
+
+    <div class="dh-container">
+        <div class="dh-left">
+            <span class="dh-badge" style="--accent: {{ accent }};">{{ direction_name }}</span>
+            <h1 class="dh-title">{{ hero_title }}</h1>
+            <p class="dh-subtitle">{{ hero_subtitle }}</p>
+
+            <div class="dh-features">
+                <div class="dh-feature">
+                    <span class="dh-feature-icon">👨‍🏫</span>
+                    <span>Индивидуально с преподавателем</span>
+                </div>
+                <div class="dh-feature">
+                    <span class="dh-feature-icon">⚡</span>
+                    <span>Практика с первого урока</span>
+                </div>
+                <div class="dh-feature">
+                    <span class="dh-feature-icon">🎯</span>
+                    <span>Подберём курс под ребёнка</span>
+                </div>
+            </div>
+
+            <div class="dh-stats">
+                <div class="dh-stat">
+                    <strong>5</strong>
+                    <span>курсов</span>
+                </div>
+                <div class="dh-stat">
+                    <strong>6–17</strong>
+                    <span>лет</span>
+                </div>
+                <div class="dh-stat">
+                    <strong>55</strong>
+                    <span>минут урок</span>
+                </div>
+            </div>
+
+            <button class="dh-cta-btn" onclick="openModalApply()">Записаться на бесплатный урок</button>
+        </div>
+
+        <div class="dh-right">
+            <img src="{{ url_for('static', path=image) }}" alt="{{ title }}" loading="lazy">
+            <div class="dh-image-badge">Первый проект уже на уроке</div>
+        </div>
+    </div>
+</section>
