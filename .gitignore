@@ -13,6 +13,3 @@ docker_run.bat
 docker_run_simple.bat
 docker-compose.yml
 
-static/images/*.png
-static/images/*.jpg
-static/images/*.webp
