@@ -37,7 +37,7 @@
 
 .pc-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
     border-color: var(--accent);
 }
 
@@ -70,15 +70,21 @@
 
 .pc-img {
     width: 100%;
-    height: 180px;
+    height: 240px;
+    padding: 12px 16px;
+    box-sizing: border-box;
     overflow: hidden;
     flex-shrink: 0;
+    background: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pc-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     transition: 0.3s;
 }
@@ -170,11 +176,10 @@
     flex: 1 1 calc(33.333% - 17px);
     min-width: 280px;
     max-width: calc(33.333% - 17px);
-    background:
-        radial-gradient(circle at 20% 80%, rgba(164, 255, 222, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 80% 20%, rgba(231, 105, 228, 0.08) 0%, transparent 40%),
-        repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(0,0,0,0.02) 12px, rgba(0,0,0,0.02) 13px),
-        #fafafa;
+    background: radial-gradient(circle at 20% 80%, rgba(164, 255, 222, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(231, 105, 228, 0.08) 0%, transparent 40%),
+    repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(0, 0, 0, 0.02) 12px, rgba(0, 0, 0, 0.02) 13px),
+    #fafafa;
     border: 1px solid #f0f0f0;
     border-radius: 16px;
     overflow: hidden;
@@ -203,6 +208,7 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(64, 13, 105, 0.3);
 }
+
 .pc-all {
     text-align: center;
 }
@@ -242,7 +248,7 @@
     }
 
     .pc-img {
-        height: 160px;
+        height: 210px;
     }
 
     .pc-actions {
