@@ -146,6 +146,7 @@ def make_up():
             "hero_title": "Программирование для детей 6–17 лет",
             "hero_subtitle": "Учим писать код с нуля и развиваем логику. Индивидуальные онлайн-занятия с преподавателем — от первых игр на Scratch до Python, C++ и олимпиадных задач.",
             "image": "/images/direction_programming.webp",
+            "image_position": "center",
             "learn": [
                 {
                     "icon": "🎮",
@@ -232,6 +233,7 @@ def make_up():
             "hero_title": "Создание игр для детей 6–17 лет",
             "hero_subtitle": "Ребёнок делает свои игры — от идеи до готового проекта. Индивидуальные онлайн-занятия с преподавателем: Scratch, Roblox Studio и Unity.",
             "image": "/images/direction_games.webp",
+            "image_position": "right",
             "learn": [
                 {
                     "icon": "🎮",
@@ -315,6 +317,7 @@ def make_up():
             "hero_title": "Дизайн и 3D для детей 6–17 лет",
             "hero_subtitle": "Учим создавать красивые интерфейсы, графику и 3D-модели. Индивидуальные онлайн-занятия в Figma и Blender — от первых иллюстраций до собственного портфолио.",
             "image": "/images/direction_design.webp",
+            "image_position": "center",
             "learn": [
                 {
                     "icon": "🎨",
@@ -398,6 +401,7 @@ def make_up():
             "hero_title": "Веб-разработка для детей 6–17 лет",
             "hero_subtitle": "Учим создавать сайты с нуля — от макета до публикации в интернете. Индивидуальные онлайн-занятия: HTML, CSS, JavaScript, React и Django.",
             "image": "/images/direction_web.webp",
+            "image_position": "right",
             "learn": [
                 {
                     "icon": "🌐",

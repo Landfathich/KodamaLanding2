@@ -214,7 +214,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    object-position: right;
+    object-position: var(--image-position, center);
 }
 
 .dh-image-badge {

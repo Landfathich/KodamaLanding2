@@ -44,7 +44,7 @@
             <button class="dh-cta-btn" onclick="openModalApply()">Записаться на бесплатный урок</button>
         </div>
 
-        <div class="dh-right">
+        <div class="dh-right" style="--image-position: {{ image_position | default('center') }};">
             <img src="{{ url_for('static', path=image) }}" alt="{{ title }}" loading="lazy">
             <div class="dh-image-badge">Первый проект уже на уроке</div>
         </div>
