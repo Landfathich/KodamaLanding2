@@ -1,6 +1,6 @@
 const typeFilters = document.querySelectorAll('[data-type]');
 const ageFilters = document.querySelectorAll('[data-age]');
-const cards = document.querySelectorAll('.cp-card');
+const cards = document.querySelectorAll('.course-card');
 let activeType = 'all';
 let activeAge = 'all';
 
@@ -57,7 +57,7 @@ ageFilters.forEach(filter => {
     });
 });
 
-document.querySelectorAll('.cp-cta').forEach(btn => {
+document.querySelectorAll('.course-cta').forEach(btn => {
     btn.addEventListener('click', function () {
         const course = this.dataset.course;
         const modalOverlay = document.getElementById('modal-apply-overlay');
