@@ -4,148 +4,30 @@
         <p class="pc-subtitle">Выберите то, что интересно вашему ребёнку</p>
 
         <div class="pc-grid">
-            <div class="course-card" style="--accent: #FFC75C;">
-                <div class="course-badge">⭐ Хит</div>
-                <div class="course-feature">Хороший старт</div>
-                <div class="course-img">
-                    <img src="{{ url_for('static', path='/images/course_scratch1.webp') }}" alt="Scratch"
-                         loading="lazy">
-                </div>
-                <div class="course-content">
-                    <h3>Создание 2D игр на Scratch</h3>
-                    <p class="course-age">6-9 лет</p>
-                    <p class="course-desc">Ребёнок создаст свою первую игру и мультфильм</p>
-                    <ul class="course-skills">
-                        <li>Логика и алгоритмы</li>
-                        <li>Анимация</li>
-                        <li>Основы программирования</li>
-                    </ul>
-                    <div class="pc-actions">
-                        {# TODO: когда будут готовы страницы курсов, вернуть кнопку #}
-                        {# <a href="/courses/scratch" class="pc-btn">Подробнее →</a> #}
-                        <button class="course-cta" data-course="Scratch">Записаться</button>
+            {% for course in popular_courses %}
+                <div class="course-card" style="--accent: {{ course.accent }};">
+                    <div class="course-badge">{{ course.badge }}</div>
+                    <div class="course-feature">{{ course.feature }}</div>
+                    <div class="course-img">
+                        <img src="{{ url_for('static', path=course.image) }}"
+                             alt="{{ course.course_name }}"
+                             loading="lazy">
+                    </div>
+                    <div class="course-content">
+                        <h3>{{ course.title }}</h3>
+                        <p class="course-age">{{ course.age }}</p>
+                        <p class="course-desc">{{ course.description }}</p>
+                        <ul class="course-skills">
+                            {% for skill in course.skills %}
+                                <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                        <div class="pc-actions">
+                            <button class="course-cta" data-course="{{ course.course_name }}">Записаться</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="course-card" style="--accent: #FF6E6E;">
-                <div class="course-badge">🔥 Топ</div>
-                <div class="course-feature">Мечта геймера</div>
-                <div class="course-img">
-                    <img src="{{ url_for('static', path='/images/course_roblox2.webp') }}" alt="Roblox Studio"
-                         loading="lazy">
-                </div>
-                <div class="course-content">
-                    <h3>Создание 3D игр в Roblox Studio</h3>
-                    <p class="course-age">8-13 лет</p>
-                    <p class="course-desc">Создаст свой 3D-мир и игру мечты</p>
-                    <ul class="course-skills">
-                        <li>3D-моделирование</li>
-                        <li>Скрипты Lua</li>
-                        <li>Игровой дизайн</li>
-                    </ul>
-                    <div class="pc-actions">
-                        {# TODO: когда будут готовы страницы курсов, вернуть кнопку #}
-                        {# <a href="/courses/roblox" class="pc-btn">Подробнее →</a> #}
-                        <button class="course-cta" data-course="Roblox Studio">Записаться</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="course-card" style="--accent: #FFD54F;">
-                <div class="course-badge">💡 Классика</div>
-                <div class="course-feature">Классика IT</div>
-                <div class="course-img">
-                    <img src="{{ url_for('static', path='/images/course_python2.webp') }}" alt="Python" loading="lazy">
-                </div>
-                <div class="course-content">
-                    <h3>Python — основы программирования</h3>
-                    <p class="course-age">с 9 лет</p>
-                    <p class="course-desc">Научится писать код, создавать ботов, игры и сайты</p>
-                    <ul class="course-skills">
-                        <li>Консольные программы и боты</li>
-                        <li>Telegram и Discord боты</li>
-                        <li>2D-игры и программы</li>
-                        <li>Django, сайты и серверы</li>
-                        <li>Алгоритмы</li>
-                    </ul>
-                    <div class="pc-actions">
-                        {# TODO: когда будут готовы страницы курсов, вернуть кнопку #}
-                        {# <a href="/courses/python" class="pc-btn">Подробнее →</a> #}
-                        <button class="course-cta" data-course="Python">Записаться</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="course-card" style="--accent: #E769E4;">
-                <div class="course-badge">🎨 Творчество</div>
-                <div class="course-feature">Дизайн и стиль</div>
-                <div class="course-img">
-                    <img src="{{ url_for('static', path='/images/course_figma1.webp') }}" alt="Figma" loading="lazy">
-                </div>
-                <div class="course-content">
-                    <h3>Дизайн в Figma</h3>
-                    <p class="course-age">с 7 лет</p>
-                    <p class="course-desc">От иллюстраций до дизайна сайтов и портфолио</p>
-                    <ul class="course-skills">
-                        <li>Иллюстрации и стикерпаки</li>
-                        <li>Дизайн сайтов и приложений</li>
-                        <li>Анимация и портфолио</li>
-                    </ul>
-                    <div class="pc-actions">
-                        {# TODO: когда будут готовы страницы курсов, вернуть кнопку #}
-                        {# <a href="/courses/figma" class="pc-btn">Подробнее →</a> #}
-                        <button class="course-cta" data-course="Figma">Записаться</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="course-card" style="--accent: #1DE9B6;">
-                <div class="course-badge">🚀 Pro</div>
-                <div class="course-feature">Для профи</div>
-                <div class="course-img">
-                    <img src="{{ url_for('static', path='/images/course_unity2.webp') }}" alt="Unity" loading="lazy">
-                </div>
-                <div class="course-content">
-                    <h3>Создание игр на Unity</h3>
-                    <p class="course-age">с 12 лет</p>
-                    <p class="course-desc">Разработает 2D и мультиплеерные 3D игры на C#</p>
-                    <ul class="course-skills">
-                        <li>Язык C# и 2D-игры</li>
-                        <li>Мультиплеерные 3D-игры</li>
-                        <li>Публикация игр</li>
-                    </ul>
-                    <div class="pc-actions">
-                        {# TODO: когда будут готовы страницы курсов, вернуть кнопку #}
-                        {# <a href="/courses/unity" class="pc-btn">Подробнее →</a> #}
-                        <button class="course-cta" data-course="Unity">Записаться</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="course-card" style="--accent: #4CAF50;">
-                <div class="course-badge">🌐 Современный</div>
-                <div class="course-feature">Создание сайтов</div>
-                <div class="course-img">
-                    <img src="{{ url_for('static', path='/images/course_web_dev1.webp') }}" alt="Веб-разработка"
-                         loading="lazy">
-                </div>
-                <div class="course-content">
-                    <h3>Веб-разработка с нуля</h3>
-                    <p class="course-age">с 9 лет</p>
-                    <p class="course-desc">Создаст свой сайт и опубликует его</p>
-                    <ul class="course-skills">
-                        <li>HTML и CSS</li>
-                        <li>JavaScript и React</li>
-                        <li>Публикация сайта</li>
-                    </ul>
-                    <div class="pc-actions">
-                        {# TODO: когда будут готовы страницы курсов, вернуть кнопку #}
-                        {# <a href="/courses/web" class="pc-btn">Подробнее →</a> #}
-                        <button class="course-cta" data-course="Веб-разработка">Записаться</button>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
 
         <div class="pc-all">

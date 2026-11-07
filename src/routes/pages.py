@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, Request
 from fastapi.responses import FileResponse
 from fastapi_csrf_protect import CsrfProtect
 
+from src.courses_data import COURSES, POPULAR_COURSES
 from src.directions_data import DIRECTIONS
 from src.page_utils import ROOT_DIRECTORY, render_page
 
@@ -10,7 +11,12 @@ router = APIRouter()
 
 @router.get("/")
 async def index(request: Request, csrf_protect: CsrfProtect = Depends()):
-    return render_page(request, "index.html", csrf_protect)
+    return render_page(
+        request,
+        "index.html",
+        csrf_protect,
+        {"popular_courses": POPULAR_COURSES}
+    )
 
 
 @router.get("/thank-you")
@@ -20,7 +26,12 @@ async def thank_you(request: Request, csrf_protect: CsrfProtect = Depends()):
 
 @router.get("/courses")
 async def courses_page(request: Request, csrf_protect: CsrfProtect = Depends()):
-    return render_page(request, "courses.html", csrf_protect)
+    return render_page(
+        request,
+        "courses.html",
+        csrf_protect,
+        {"courses": COURSES}
+    )
 
 
 @router.get("/directions/programming")
