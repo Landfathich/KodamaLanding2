@@ -68,7 +68,7 @@ class ApplicationRequest(BaseModel):
 
     @field_validator('child_age')
     def validate_child_age(cls, v):
-        ALLOWED_AGES = {'7-9', '10-12', '13-15', '16-17'}
+        ALLOWED_AGES = {'6-9', '10-12', '13-17'}
         if v not in ALLOWED_AGES:
             raise ValueError('Выбран недопустимый возраст')
         return v
