@@ -90,7 +90,7 @@ def make_up():
 
     class CsrfSettings(BaseSettings):
         secret_key: str
-        csrf_token_location: str = "form"
+        csrf_token_location: str = "header"
         cookie_samesite: str = "lax"
         cookie_secure: bool = True
 
@@ -109,6 +109,20 @@ def make_up():
             content={"detail": exc.message}
         )
 
+    def render_page(request: Request, template_name: str, csrf_protect: CsrfProtect, context: dict = None):
+        csrf_token, signed_token = csrf_protect.generate_csrf_tokens()
+
+        template_context = {
+            "request": request,
+            "csrf_token": csrf_token,
+            **(context or {})
+        }
+
+        response = root.TemplateResponse(template_name, template_context)
+        csrf_protect.set_csrf_cookie(signed_token, response)
+
+        return response
+
     static_path = os.path.join(ROOT_DIRECTORY, "static")
     app.mount("/app/static", StaticFiles(directory=str(static_path)), name="static")
     app.add_middleware(
@@ -121,24 +135,21 @@ def make_up():
 
     @app.get("/")
     async def index(request: Request, csrf_protect: CsrfProtect = Depends()):
-        # Генерация токенов
-        csrf_token, signed_token = csrf_protect.generate_csrf_tokens()
-        # Создание ответа с шаблоном
-        response = root.TemplateResponse("index.html", {"request": request, "csrf_token": csrf_token})
-        # Установка подписанного токена в cookie
-        csrf_protect.set_csrf_cookie(signed_token, response)
-        return response
+        return render_page(request, "index.html", csrf_protect)
 
     @app.get("/thank-you")
-    async def thank_you(request: Request):
-        return root.TemplateResponse("thank_you.html", {"request": request})
+    async def thank_you(request: Request, csrf_protect: CsrfProtect = Depends()):
+        return render_page(request, "thank_you.html", csrf_protect)
 
     @app.get("/courses")
-    async def courses_page(request: Request):
-        return root.TemplateResponse("courses.html", {"request": request})
+    async def courses_page(request: Request, csrf_protect: CsrfProtect = Depends()):
+        return render_page(request, "courses.html", csrf_protect)
 
     @app.get("/directions/programming")
-    async def direction_programming(request: Request):
+    async def direction_programming(
+            request: Request,
+            csrf_protect: CsrfProtect = Depends()
+    ):
         data = {
             "title": "Программирование",
             "direction_name": "Программирование",
@@ -222,10 +233,13 @@ def make_up():
                  "answer": "Да, первый урок — бесплатный. Ребёнок сразу сделает первый проект, а вы сможете задать вопросы."}
             ]
         }
-        return root.TemplateResponse("direction.html", {"request": request, **data})
+        return render_page(request, "direction.html", csrf_protect, data)
 
     @app.get("/directions/games")
-    async def direction_games(request: Request):
+    async def direction_games(
+            request: Request,
+            csrf_protect: CsrfProtect = Depends()
+    ):
         data = {
             "title": "Создание игр",
             "direction_name": "Создание игр",
@@ -306,10 +320,13 @@ def make_up():
                  "answer": "Да, первый урок бесплатный. Ребёнок создаст свою первую игру уже на нём."}
             ]
         }
-        return root.TemplateResponse("direction.html", {"request": request, **data})
+        return render_page(request, "direction.html", csrf_protect, data)
 
     @app.get("/directions/design")
-    async def direction_design(request: Request):
+    async def direction_design(
+            request: Request,
+            csrf_protect: CsrfProtect = Depends()
+    ):
         data = {
             "title": "Дизайн и 3D",
             "direction_name": "Дизайн и 3D",
@@ -390,10 +407,13 @@ def make_up():
                  "answer": "Да, первый урок бесплатный. Ребёнок сделает первую работу уже на нём."}
             ]
         }
-        return root.TemplateResponse("direction.html", {"request": request, **data})
+        return render_page(request, "direction.html", csrf_protect, data)
 
     @app.get("/directions/web")
-    async def direction_web(request: Request):
+    async def direction_web(
+            request: Request,
+            csrf_protect: CsrfProtect = Depends()
+    ):
         data = {
             "title": "Веб-разработка",
             "direction_name": "Веб-разработка",
@@ -475,15 +495,15 @@ def make_up():
                  "answer": "Да, первый урок бесплатный. Ребёнок создаст свою первую страницу уже на нём."}
             ]
         }
-        return root.TemplateResponse("direction.html", {"request": request, **data})
+        return render_page(request, "direction.html", csrf_protect, data)
 
     @app.get("/offer")
-    async def offer_page(request: Request):
-        return root.TemplateResponse("offer.html", {"request": request})
+    async def offer_page(request: Request, csrf_protect: CsrfProtect = Depends()):
+        return render_page(request, "offer.html", csrf_protect)
 
     @app.get("/privacy")
-    async def privacy_policy(request: Request):
-        return root.TemplateResponse("privacy.html", {"request": request})
+    async def privacy_policy(request: Request, csrf_protect: CsrfProtect = Depends()):
+        return render_page(request, "privacy.html", csrf_protect)
 
     # @app.get("/advertising")
     # async def privacy_policy(request: Request):
