@@ -3,4 +3,4 @@ Allow: /
 Disallow: /offer
 Disallow: /privacy
 
-Sitemap: https://kodamaclass.com/sitemap.xml
+Sitemap: https://kodamaschool.com/sitemap.xml
