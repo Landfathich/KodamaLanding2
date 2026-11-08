@@ -13,7 +13,7 @@ TABLE_ID = "1zAsg7X1S1RiGG51qMK2RiEXUWxpJ9MaYhcWGlHzc5xQ"
 # Нужно вмонтировать папку kodama-secrets так:
 # -v /var/lib/dokku/data/storage/kodama-secrets:/app/secrets
 # Путь к ключу: на сервере /app/secrets/..., локально в корне проекта
-# TODO На сервере: задайте переменную окружения GOOGLE_SHEETS_KEY_PATH=/app/secrets/kodama-storage-b9df0175c688.json
+# На сервере: задайте переменную окружения GOOGLE_SHEETS_KEY_PATH=/app/secrets/kodama-storage-b9df0175c688.json
 KEY_PATH = os.getenv("GOOGLE_SHEETS_KEY_PATH", "kodama-storage-b9df0175c688.json")
 
 
