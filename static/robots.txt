@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /offer
-Disallow: /privacy
 
 Sitemap: https://kodamaschool.com/sitemap.xml

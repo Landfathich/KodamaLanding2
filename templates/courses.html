@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
-{% block body_id %}courses-page{% endblock %}
+{% block title %}Все курсы для детей 6–17 лет — программирование, дизайн, игры | Kodama{% endblock %}
 
-{% block title %}Все курсы программирования для детей | Kodama{% endblock %}
+{% block meta_description %}Выберите онлайн-курс для ребёнка 6–17 лет: Scratch, Python, Roblox, Unity, Blender, Figma, веб-разработка и другие направления. Индивидуальные занятия и бесплатный пробный урок.{% endblock %}
+
+{% block canonical_url %}https://kodamaschool.com/courses{% endblock %}
+
+{% block body_id %}courses-page{% endblock %}
 
 {% block styles %}
     <link rel="stylesheet" href="{{ url_for('static', path='/css/courses_page.css') }}">

@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
-{% block body_id %}direction-page{% endblock %}
+{% block title %}{{ seo_title }}{% endblock %}
+{% block meta_description %}{{ seo_description }}{% endblock %}
 
-{% block title %}{{ title }} для детей — Kodama School{% endblock %}
+{% block body_id %}direction-page{% endblock %}
 
 {% block styles %}
     <link rel="stylesheet" href="{{ url_for('static', path='/css/direction_hero.css') }}">
