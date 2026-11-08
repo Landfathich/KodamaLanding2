@@ -3,9 +3,9 @@
 <yml_catalog date="2026-02-21 12:00">
     <shop>
         <name>Kodama</name>
-        <url>https://kodamaclass.com</url>
+        <url>https://kodamaschool.com</url>
         <email>kodama.edu@gmail.com</email>
-        <picture>https://kodamaclass.com/app/static/icons/apple-touch-icon.png</picture>
+        <picture>https://kodamaschool.com/app/static/icons/apple-touch-icon.png</picture>
         <description>Онлайн-школа программирования для детей. Индивидуальные занятия по IT, дизайну, созданию игр.
         </description>
         <currencies>
@@ -27,11 +27,11 @@
             <!-- Графический дизайн в Figma -->
             <offer id="figma1" available="true">
                 <name>Графический дизайн в Figma</name>
-                <url>https://kodamaclass.com/#figma</url>
+                <url>https://kodamaschool.com/#figma</url>
                 <categoryId>401</categoryId>
                 <price>1000</price>
                 <currencyId>RUR</currencyId>
-                <picture>https://kodamaclass.com/app/static/images/course_figma1.webp</picture>
+                <picture>https://kodamaschool.com/app/static/images/course_figma1.webp</picture>
                 <description>Курс по созданию дизайна в Figma для детей. Ребёнок научится создавать макеты сайтов,
                     приложений, иллюстрации и анимацию.
                 </description>
@@ -63,11 +63,11 @@
             <!-- Создание 2D игр на Scratch -->
             <offer id="scratch1" available="true">
                 <name>Создание 2D игр на Scratch</name>
-                <url>https://kodamaclass.com/#scratch</url>
+                <url>https://kodamaschool.com/#scratch</url>
                 <categoryId>116</categoryId>
                 <price>1000</price>
                 <currencyId>RUR</currencyId>
-                <picture>https://kodamaclass.com/app/static/images/course_scratch1.webp</picture>
+                <picture>https://kodamaschool.com/app/static/images/course_scratch1.webp</picture>
                 <description>Scratch — визуальная среда программирования, где ребёнок создаёт игры и анимации, развивая
                     логику и творческое мышление.
                 </description>
@@ -98,11 +98,11 @@
             <!-- Компьютерная грамотность с нуля -->
             <offer id="comp_lit1" available="true">
                 <name>Компьютерная грамотность с нуля</name>
-                <url>https://kodamaclass.com/#computer-literacy</url>
+                <url>https://kodamaschool.com/#computer-literacy</url>
                 <categoryId>10011</categoryId>
                 <price>1000</price>
                 <currencyId>RUR</currencyId>
-                <picture>https://kodamaclass.com/app/static/images/course_comp_lit1.webp</picture>
+                <picture>https://kodamaschool.com/app/static/images/course_comp_lit1.webp</picture>
                 <description>Базовый курс для детей: устройство ПК, файлы, офисные программы, интернет и безопасность.
                 </description>
                 <param name="Ближайшая дата">2026-03-01</param>
@@ -129,11 +129,11 @@
             <!-- Создание 3D игр в Roblox Studio -->
             <offer id="roblox1" available="true">
                 <name>Создание 3D игр в Roblox Studio</name>
-                <url>https://kodamaclass.com/#roblox</url>
+                <url>https://kodamaschool.com/#roblox</url>
                 <categoryId>116</categoryId>
                 <price>1000</price>
                 <currencyId>RUR</currencyId>
-                <picture>https://kodamaclass.com/app/static/images/course_roblox2.webp</picture>
+                <picture>https://kodamaschool.com/app/static/images/course_roblox2.webp</picture>
                 <description>Разработка игр в Roblox Studio: 3D-моделирование, программирование на Lua, создание
                     многопользовательских миров.
                 </description>
@@ -164,11 +164,11 @@
             <!-- 3D-моделирование в Blender -->
             <offer id="blender1" available="true">
                 <name>3D-моделирование в Blender</name>
-                <url>https://kodamaclass.com/#blender</url>
+                <url>https://kodamaschool.com/#blender</url>
                 <categoryId>411</categoryId>
                 <price>1000</price>
                 <currencyId>RUR</currencyId>
-                <picture>https://kodamaclass.com/app/static/images/course_blender2.webp</picture>
+                <picture>https://kodamaschool.com/app/static/images/course_blender2.webp</picture>
                 <description>Курс по созданию трёхмерных моделей и анимации в Blender. Ребёнок научится моделировать,
                     текстурировать и анимировать объекты.
                 </description>
@@ -199,11 +199,11 @@
             <!-- Веб-разработка с нуля до публикации -->
             <offer id="web_dev1" available="true">
                 <name>Веб-разработка с нуля до публикации</name>
-                <url>https://kodamaclass.com/#web-development</url>
+                <url>https://kodamaschool.com/#web-development</url>
                 <categoryId>101</categoryId>
                 <price>1000</price>
                 <currencyId>RUR</currencyId>
-                <picture>https://kodamaclass.com/app/static/images/course_web_dev1.webp</picture>
+                <picture>https://kodamaschool.com/app/static/images/course_web_dev1.webp</picture>
                 <description>Курс по созданию сайтов: HTML, CSS, JavaScript. Ребёнок научится верстать, программировать
                     интерактив и публиковать проекты.
                 </description>
@@ -234,11 +234,11 @@
             <!-- Основы программирования на Python -->
             <offer id="python1" available="true">
                 <name>Основы программирования на Python</name>
-                <url>https://kodamaclass.com/#python</url>
+                <url>https://kodamaschool.com/#python</url>
                 <categoryId>104</categoryId>
                 <price>1000</price>
                 <currencyId>RUR</currencyId>
-                <picture>https://kodamaclass.com/app/static/images/course_python2.webp</picture>
+                <picture>https://kodamaschool.com/app/static/images/course_python2.webp</picture>
                 <description>Изучение Python с нуля: от синтаксиса до создания приложений с графическим интерфейсом и
                     веб-проектов.
                 </description>
@@ -269,11 +269,11 @@
             <!-- Создание игр на Unity -->
             <offer id="unity1" available="true">
                 <name>Создание игр на Unity</name>
-                <url>https://kodamaclass.com/#unity</url>
+                <url>https://kodamaschool.com/#unity</url>
                 <categoryId>702</categoryId>
                 <price>1000</price>
                 <currencyId>RUR</currencyId>
-                <picture>https://kodamaclass.com/app/static/images/course_unity2.webp</picture>
+                <picture>https://kodamaschool.com/app/static/images/course_unity2.webp</picture>
                 <description>Разработка 2D и 3D игр на движке Unity с использованием C#. От простых арканоидов до
                     многопользовательских проектов.
                 </description>
@@ -304,11 +304,11 @@
             <!-- Подготовка к олимпиадам по программированию -->
             <offer id="olympic1" available="true">
                 <name>Подготовка к олимпиадам по программированию</name>
-                <url>https://kodamaclass.com/#olympic-programming</url>
+                <url>https://kodamaschool.com/#olympic-programming</url>
                 <categoryId>109</categoryId>
                 <price>1000</price>
                 <currencyId>RUR</currencyId>
-                <picture>https://kodamaclass.com/app/static/images/course_olympic1.webp</picture>
+                <picture>https://kodamaschool.com/app/static/images/course_olympic1.webp</picture>
                 <description>Курс для углублённого изучения алгоритмов и структур данных, подготовка к олимпиадам по
                     программированию.
                 </description>
@@ -339,11 +339,11 @@
             <!-- Изучение языка C++ -->
             <offer id="cpp1" available="true">
                 <name>Изучение языка C++</name>
-                <url>https://kodamaclass.com/#cpp</url>
+                <url>https://kodamaschool.com/#cpp</url>
                 <categoryId>106</categoryId>
                 <price>1000</price>
                 <currencyId>RUR</currencyId>
-                <picture>https://kodamaclass.com/app/static/images/course_cpp2.webp</picture>
+                <picture>https://kodamaschool.com/app/static/images/course_cpp2.webp</picture>
                 <description>Курс по C++ для начинающих: от основ до объектно-ориентированного программирования и
                     создания игр.
                 </description>
