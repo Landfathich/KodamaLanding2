@@ -12,19 +12,23 @@
 
             <div class="hero-advantages">
                 <div class="advantage-item">
-                    <span class="advantage-icon">👨‍💻</span>
+                    <img class="advantage-icon" src="{{ url_for('static', path='/images/icons/individual.webp') }}"
+                         alt="">
                     <span>Индивидуально с преподавателем</span>
                 </div>
                 <div class="advantage-item">
-                    <span class="advantage-icon">🎮</span>
+                    <img class="advantage-icon" src="{{ url_for('static', path='/images/icons/interests.webp') }}"
+                         alt="">
                     <span>Обучение через интересы ребёнка</span>
                 </div>
                 <div class="advantage-item">
-                    <span class="advantage-icon">📈</span>
+                    <img class="advantage-icon" src="{{ url_for('static', path='/images/icons/projects.webp') }}"
+                         alt="">
                     <span>Реальные проекты с первого урока</span>
                 </div>
                 <div class="advantage-item">
-                    <span class="advantage-icon">💬</span>
+                    <img class="advantage-icon" src="{{ url_for('static', path='/images/icons/feedback.webp') }}"
+                         alt="">
                     <span>Обратная связь родителю</span>
                 </div>
             </div>
@@ -66,7 +70,10 @@
 
                     <p class="hero-form-note">Нажимая кнопку, вы принимаете <a href="/offer" target="_blank">условия
                         оферты</a></p>
-                    <p class="hero-form-bonus">🎁 Урок бесплатный — просто попробуйте</p>
+                    <p class="hero-form-bonus">
+                        <img src="{{ url_for('static', path='/images/icons/free-lesson.webp') }}" alt="">
+                        <span>Урок бесплатный — просто попробуйте</span>
+                    </p>
                 </form>
                 <div class="hero-form-decoration">
                     <img src="{{ url_for('static', path='/images/hero_side.webp') }}" alt="Ребёнок за компьютером">

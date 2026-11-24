@@ -279,11 +279,22 @@
 }
 
 .hero-form-bonus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     font-size: 13px;
     color: rgb(164, 255, 222);
     text-align: center;
     margin-top: 4px;
     font-weight: 500;
+}
+
+.hero-form-bonus img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .hero-form-decoration {
@@ -340,6 +351,13 @@
 
 .checkbox-label input[type="checkbox"]:hover {
     border-color: rgb(164, 255, 222);
+}
+
+.advantage-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 /* Адаптивность */
