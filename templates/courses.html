@@ -2,7 +2,8 @@
 
 {% block title %}Все курсы для детей 6–17 лет — программирование, дизайн, игры | Kodama{% endblock %}
 
-{% block meta_description %}Выберите онлайн-курс для ребёнка 6–17 лет: Scratch, Python, Roblox, Unity, Blender, Figma, веб-разработка и другие направления. Индивидуальные занятия и бесплатный пробный урок.{% endblock %}
+{% block meta_description %}Выберите онлайн-курс для ребёнка 6–17 лет: Scratch, Python, Roblox, Unity, Blender, Figma,
+    веб-разработка и другие направления. Индивидуальные занятия и бесплатный пробный урок.{% endblock %}
 
 {% block canonical_url %}https://kodamaschool.com/courses{% endblock %}
 
@@ -15,6 +16,8 @@
 {% endblock %}
 
 {% block content %}
+    {% from "includes/course_card.html" import course_card with context %}
+
     <section class="courses-page">
         <div class="cp-container">
             <h1 class="cp-title">Все курсы</h1>
@@ -37,30 +40,7 @@
 
             <div class="cp-grid">
                 {% for course in courses %}
-                    <div class="course-card course-card--catalog"
-                         data-age-min="{{ course.age_min }}"
-                         data-age-max="{{ course.age_max }}"
-                         data-types="{{ course.types | join(',') }}"
-                         data-course="{{ course.slug }}">
-                        <div class="course-badge">{{ course.badge }}</div>
-                        <div class="course-feature">{{ course.feature }}</div>
-                        <div class="course-img">
-                            <img src="{{ url_for('static', path=course.image) }}"
-                                 alt="{{ course.course_name }}"
-                                 loading="lazy">
-                        </div>
-                        <div class="course-content">
-                            <h3>{{ course.title }}</h3>
-                            <p class="course-age">{{ course.age }}</p>
-                            <p class="course-desc">{{ course.description }}</p>
-                            <ul class="course-skills">
-                                {% for skill in course.skills %}
-                                    <li>{{ skill }}</li>
-                                {% endfor %}
-                            </ul>
-                            <button class="course-cta" data-course="{{ course.course_name }}">Записаться</button>
-                        </div>
-                    </div>
+                    {{ course_card(course) }}
                 {% endfor %}
             </div>
         </div>
@@ -70,5 +50,6 @@
 {% endblock %}
 
 {% block scripts %}
+    <script src="{{ url_for('static', path='/js/course_cards.js') }}" defer></script>
     <script src="{{ url_for('static', path='/js/courses_page.js') }}" defer></script>
 {% endblock %}

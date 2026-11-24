@@ -84,11 +84,6 @@
     }
 
     .pc-actions {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .pc-actions .course-cta {
-        width: 100%;
+        align-items: flex-start;
     }
 }

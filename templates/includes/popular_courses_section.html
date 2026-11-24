@@ -1,3 +1,5 @@
+{% from "includes/course_card.html" import course_card with context %}
+
 <section id="popular-courses" class="popular-courses">
     <div class="pc-container">
         <h2 class="pc-title">Популярные курсы</h2>
@@ -5,28 +7,7 @@
 
         <div class="pc-grid">
             {% for course in popular_courses %}
-                <div class="course-card" style="--accent: {{ course.accent }};">
-                    <div class="course-badge">{{ course.badge }}</div>
-                    <div class="course-feature">{{ course.feature }}</div>
-                    <div class="course-img">
-                        <img src="{{ url_for('static', path=course.image) }}"
-                             alt="{{ course.course_name }}"
-                             loading="lazy">
-                    </div>
-                    <div class="course-content">
-                        <h3>{{ course.title }}</h3>
-                        <p class="course-age">{{ course.age }}</p>
-                        <p class="course-desc">{{ course.description }}</p>
-                        <ul class="course-skills">
-                            {% for skill in course.skills %}
-                                <li>{{ skill }}</li>
-                            {% endfor %}
-                        </ul>
-                        <div class="pc-actions">
-                            <button class="course-cta" data-course="{{ course.course_name }}">Записаться</button>
-                        </div>
-                    </div>
-                </div>
+                {{ course_card(course) }}
             {% endfor %}
         </div>
 

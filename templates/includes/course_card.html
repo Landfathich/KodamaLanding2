@@ -1,0 +1,30 @@
+{% macro course_card(course) %}
+    <div class="course-card"
+         style="--accent: {{ course.accent | default('#E769E4', true) }};"
+         data-age-min="{{ course.age_min | default('') }}"
+         data-age-max="{{ course.age_max | default('') }}"
+         data-types="{{ course.types | default([]) | join(',') }}"
+         data-course="{{ course.slug | default('') }}">
+        <div class="course-badge">{{ course.badge }}</div>
+        <div class="course-feature">{{ course.feature }}</div>
+        <div class="course-img">
+            <img src="{{ url_for('static', path=course.image) }}"
+                 alt="{{ course.course_name }}"
+                 loading="lazy">
+        </div>
+        <div class="course-content">
+            <h3>{{ course.title }}</h3>
+            <p class="course-age">{{ course.age }}</p>
+            <p class="course-desc">{{ course.description }}</p>
+            <ul class="course-skills">
+                {% for skill in course.skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+
+            <div class="pc-actions">
+                <button class="course-cta" data-course="{{ course.course_name }}">Записаться</button>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
